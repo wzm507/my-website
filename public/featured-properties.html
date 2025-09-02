@@ -1,0 +1,2107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Properties - Hawson House</title>
+    <style>
+      /* 确保全局变量与主页完全一致 */
+      :root {
+        --primary-color: #333;
+        --secondary-color: #6c63ff;
+        --accent-color: #e74c3c;
+        --light-color: #f8f9fa;
+        --dark-color: #2c3e50;
+        --light-text: #7f8c8d;
+        --border-radius: 8px;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.15);
+        --transition: all 0.3s ease;
+      }
+      
+      /* 右侧固定语言切换按钮样式 */
+      .fixed-language-switcher {
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1000;
+      }
+      
+      .language-button {
+        background-color: white;
+        color: var(--primary-color);
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        box-shadow: var(--shadow);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        transition: var(--transition);
+      }
+      
+      .language-button:hover {
+        transform: scale(1.1);
+        box-shadow: var(--shadow-hover);
+      }
+      
+      .language-dropdown {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        margin-top: 10px;
+        background-color: white;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        min-width: 120px;
+        display: none;
+      }
+      
+      .language-dropdown.show {
+        display: block;
+      }
+      
+      .language-option {
+        display: block;
+        width: 100%;
+        padding: 10px 15px;
+        background: none;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      
+      .language-option:hover {
+        background-color: var(--light-color);
+      }
+      
+      /* 原有样式保持不变 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        color: var(--primary-color);
+        background-color: var(--light-color);
+      }
+      
+      /* 确保卡片容器样式与主页完全一致 */
+      .properties {
+        padding: 6rem 2rem;
+        background-color: white;
+      }
+      
+      .section-header {
+        text-align: left;
+        max-width: 1400px;
+        margin: 0 auto 4rem;
+        padding: 0 1rem;
+      }
+      
+      .section-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+      
+      .section-header p {
+        font-size: 1.1rem;
+        color: var(--light-text);
+      }
+      
+      /* 确保网格布局与主页完全一致 */
+      .properties-grid {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+        padding: 0 1rem;
+      }
+      
+      /* 针对大屏幕的优化 */
+      @media (min-width: 1200px) {
+        .properties-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      
+      /* 针对中等屏幕的优化 */
+      @media (min-width: 768px) and (max-width: 1199px) {
+        .properties-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      
+      /* 针对小屏幕的优化 */
+      @media (max-width: 767px) {
+        .properties-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+      }
+      
+      /* 房产卡片样式 */
+      .property-card {
+        background-color: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+      }
+      
+      .property-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+      
+      /* 房产轮播图样式 */
+      .property-carousel {
+        position: relative;
+        height: 250px;
+        overflow: hidden;
+      }
+      
+      .carousel-slides {
+        height: 100%;
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+      
+      .carousel-slide {
+        min-width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      
+      .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      /* 收藏按钮样式 */
+      .favorite-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.3s ease;
+      }
+      
+      .favorite-btn:hover {
+        background-color: white;
+        transform: scale(1.1);
+      }
+      
+      .favorite-btn.active {
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+      
+      .favorite-btn.active svg {
+        fill: #e74c3c;
+        stroke: #e74c3c;
+      }
+      
+      /* 轮播指示器样式 */
+      .carousel-indicators {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 10;
+      }
+      
+      .carousel-indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.6);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .carousel-indicator.active {
+        background-color: white;
+        width: 24px;
+        border-radius: 4px;
+      }
+      
+      /* 房产信息样式 */
+      .property-info {
+        padding: 1.5rem;
+      }
+      
+      .property-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+      }
+      
+      .property-type {
+        font-size: 0.9rem;
+        color: var(--light-text);
+        margin-bottom: 1rem;
+      }
+      
+      .property-price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--secondary-color);
+        margin-bottom: 1rem;
+      }
+      
+      .property-status {
+        display: inline-block;
+        background-color: rgba(108, 99, 255, 0.1);
+        color: var(--secondary-color);
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      /* 房产元信息样式 */
+      .property-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      
+      .meta-item {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        color: var(--light-text);
+      }
+      
+      .meta-item i {
+        margin-right: 0.75rem;
+        color: var(--secondary-color);
+      }
+      
+      /* 加载动画样式 */
+      .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+      }
+      
+      .loading::after {
+        content: '';
+        width: 40px;
+        height: 40px;
+        border: 4px solid var(--light-color);
+        border-top: 4px solid var(--secondary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      /* 空状态样式 */
+      .empty-state {
+        text-align: center;
+        padding: 4rem;
+        color: var(--light-text);
+      }
+      
+      .empty-state h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+      
+      /* 响应式调整 */
+      @media (max-width: 991px) {
+        .property-carousel {
+          height: 200px;
+        }
+        
+        .property-price {
+          font-size: 1.25rem;
+        }
+      }
+      
+      @media (max-width: 767px) {
+        .properties {
+          padding: 4rem 1rem;
+        }
+        
+        .section-header h2 {
+          font-size: 2rem;
+        }
+        
+        .property-card {
+          margin-bottom: 2rem;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .property-carousel {
+          height: 180px;
+        }
+        
+        .property-info {
+          padding: 1.25rem;
+        }
+        
+        .property-title {
+          font-size: 1.1rem;
+        }
+      }
+      
+      /* 全局过渡效果 */
+      * {
+        transition: all 0.3s ease;
+      }
+      
+      /* 选择文本样式 */
+      ::selection {
+        background-color: rgba(108, 99, 255, 0.2);
+      }
+      
+      /* 滚动条样式 */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: var(--light-color);
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: var(--light-text);
+        border-radius: 4px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-color);
+      }
+      
+      /* 确保卡片样式与主页完全一致 */
+      .property-card {
+        background-color: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      
+      .property-carousel {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        border-radius: var(--border-radius);
+      }
+      
+      .carousel-slides {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      
+      .carousel-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 1;
+        transition: opacity 0.5s ease;
+      }
+      
+      .carousel-slide:first-child {
+        opacity: 1;
+        z-index: 2;
+      }
+      
+      .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .carousel-indicators {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 10;
+      }
+      
+      .carousel-indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .carousel-indicator.active {
+        background-color: white;
+        width: 12px;
+        border-radius: 50%;
+      }
+      
+      .property-details {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+      
+      .property-details h3 {
+        margin: 0 0 0.5rem 0;
+        color: var(--primary-color);
+        font-size: 1.3rem;
+      }
+      
+      .property-type {
+        color: var(--light-text);
+        font-size: 0.9rem;
+        margin: 0 0 1rem 0;
+      }
+      
+      .property-price {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: var(--accent-color);
+        margin: 0 0 0.5rem 0;
+      }
+      
+      .property-status {
+        color: var(--light-text);
+        font-size: 0.9rem;
+        margin: 0 0 1.5rem 0;
+      }
+      
+      .property-meta {
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+      }
+      
+      .meta-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.8rem;
+        font-size: 0.9rem;
+        color: var(--light-text);
+      }
+      
+      .meta-item svg {
+        margin-right: 8px;
+        color: var(--primary-color);
+      }
+      
+      .favorite-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        z-index: 20;
+        overflow: hidden;
+      }
+      
+      .favorite-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.3s ease;
+      }
+      
+      .favorite-btn:hover {
+        background-color: white;
+        transform: scale(1.1);
+      }
+      
+      .favorite-btn.active {
+        background-color: #e74c3c;
+      }
+      
+      .favorite-btn.active svg {
+        fill: white;
+        stroke: white;
+      }
+      
+      .heart-particle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #e74c3c;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: heartBurst 1s ease-out forwards;
+        z-index: 1000;
+      }
+      
+      @keyframes heartBurst {
+        0% {
+          transform: scale(0.5);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1);
+          opacity: 0.8;
+        }
+        100% {
+          transform: scale(0);
+          opacity: 0;
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="fixed-language-switcher">
+      <button class="language-button">EN</button>
+      <div class="language-dropdown">
+        <button class="language-option" data-lang="en">English</button>
+        <button class="language-option" data-lang="zh">中文</button>
+        <button class="language-option" data-lang="ar">العربية</button>
+      </div>
+    </div>
+
+
+    <section class="properties">
+        <div class="section-header">
+            <h2>Featured Properties</h2>
+            <p>Explore our premium selection of properties</p>
+        </div>
+        
+        <div class="properties-grid">
+            <!-- 第一个房产卡片 -->
+            <div class="property-card">
+                <div class="property-carousel">
+                    <button class="favorite-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/1/71.jpg" alt="Montiva by Vida" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/1/271.jpg" alt="Montiva by Vida" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/1/281.jpg" alt="Montiva by Vida" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/1/291.jpg" alt="Montiva by Vida" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/1/611.jpg" alt="Montiva by Vida" />
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <h3>Montiva by Vida</h3>
+                    <p class="property-type">Apartment</p>
+                    <div class="property-price">1,910,000 AED</div>
+                    <p class="property-status">Residential for Sale</p>
+                    <div class="property-meta">
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                            Developer: Emaar
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Area: Dubai Creek Harbour, Dubai
+                        </div>
+                        <!-- Listed On removed -->
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Handover Date: 09-2029
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第二个房产卡片 -->
+            <div class="property-card">
+                <div class="property-carousel">
+                    <button class="favorite-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/2/snapedit_17424527004121.jpg" alt="The Palace Villas Ostra" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/2/snapedit_17424527819781.jpg" alt="The Palace Villas Ostra" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/2/snapedit_17424529503561.jpg" alt="The Palace Villas Ostra" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/2/snapedit_17424530803781.jpg" alt="The Palace Villas Ostra" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/2/snapedit_17424532045721.jpg" alt="The Palace Villas Ostra" />
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <h3>The Palace Villas Ostra</h3>
+                    <p class="property-type">Villa</p>
+                    <div class="property-price">13,130,000 AED</div>
+                    <p class="property-status">Residential for Sale</p>
+                    <div class="property-meta">
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                            Developer: Emaar
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Area: The Oasis by Emaar, Dubai
+                        </div>
+                        <!-- Listed On removed -->
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Handover Date: 09-2029
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第三个房产卡片 -->
+            <div class="property-card">
+                <div class="property-carousel">
+                    <button class="favorite-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/3/11.jpg" alt="Rosehill" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/3/snapedit_17521374158161.jpg" alt="Rosehill" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/3/snapedit_17521374465641.jpg" alt="Rosehill" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/3/snapedit_17521375260501.jpg" alt="Rosehill" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/3/snapedit_17521376417081.jpg" alt="Rosehill" />
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <h3>Rosehill</h3>
+                    <p class="property-type">Apartment</p>
+                    <div class="property-price">1,600,000 AED</div>
+                    <p class="property-status">Residential for Sale</p>
+                    <div class="property-meta">
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                            Developer: Emaar
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Area: Dubai Hills Estate, Dubai
+                        </div>
+                        <!-- Listed On removed -->
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Handover Date: 06-2029
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第四个房产卡片 -->
+            <div class="property-card">
+                <div class="property-carousel">
+                    <button class="favorite-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/4/img291.jpg" alt="Golf Hillside" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/4/img371.jpg" alt="Golf Hillside" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/4/img3811.jpg" alt="Golf Hillside" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/4/img611.jpg" alt="Golf Hillside" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/4/img961.jpg" alt="Golf Hillside" />
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <h3>Golf Hillside</h3>
+                    <p class="property-type">Apartment</p>
+                    <div class="property-price">2,730,000 AED</div>
+                    <p class="property-status">Residential for Sale</p>
+                    <div class="property-meta">
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                            Developer: Emaar
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Area: Dubai Hills Estate, Dubai
+                        </div>
+                        <!-- Listed On removed -->
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Handover Date: 12-2028
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 第五个房产卡片 -->
+            <div class="property-card">
+                <div class="property-carousel">
+                    <button class="favorite-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/5/img1001.jpg" alt="Montiva by Vida 2" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/5/img1481.jpg" alt="Montiva by Vida 2" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/5/img1531.jpg" alt="Montiva by Vida 2" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/5/img691.jpg" alt="Montiva by Vida 2" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/5/img741.jpg" alt="Montiva by Vida 2" />
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <h3>Selvara</h3>
+                    <p class="property-type">Villa</p>
+                    <div class="property-price">6,200,000 AED</div>
+                    <p class="property-status">Residential for Sale</p>
+                    <div class="property-meta">
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                            Developer: Emaar
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Area: Grand Polo Club and Resort, Dubai
+                        </div>
+                        <!-- Listed On removed -->
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Handover Date: 04-2029
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 第六个房产卡片 -->
+            <div class="property-card">
+                <div class="property-carousel">
+                    <button class="favorite-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/6/101.jpg" alt="Montiva by Vida 3" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/6/111.jpg" alt="Montiva by Vida 3" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/6/261.jpg" alt="Montiva by Vida 3" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/6/271.jpg" alt="Montiva by Vida 3" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/6/51.jpg" alt="Montiva by Vida 3" />
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <h3>Silva Dubai Creek Harbour</h3>
+                    <p class="property-type">Apartment</p>
+                    <div class="property-price">1,790,000 AED</div>
+                    <p class="property-status">Residential for Sale</p>
+                    <div class="property-meta">
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                            Developer: Emaar
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Area: Dubai Creek Harbour, Dubai
+                        </div>
+                        <!-- Listed On removed -->
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Handover Date: 09-2029
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 第七个房产卡片 -->
+            <div class="property-card">
+                <div class="property-carousel">
+                    <button class="favorite-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects7/MAMSHA-PALM—Brief_v2_14-scaled-1-1024x523[1].jpg" alt="Montiva by Vida 4" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects7/medium[1].webp" alt="Montiva by Vida 4" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects7/mm-launch_banner_01[1].webp" alt="Montiva by Vida 4" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects7/mm-launch_banner_02[1].webp" alt="Montiva by Vida 4" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects7/mm-launch_banner_02[1].webp" alt="Montiva by Vida 4" />
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <h3>Mamsha Palm</h3>
+                    <p class="property-type">Apartment</p>
+                    <div class="property-price">3,700,000 AED</div>
+                    <p class="property-status">Residential for Sale</p>
+                    <div class="property-meta">
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                            Developer: Aldar
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Area: Saadiyat Island, Abu Dhabi
+                        </div>
+                        <!-- Listed On removed -->
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Handover Date: 03-2028
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 第八个房产卡片 -->
+            <div class="property-card">
+                <div class="property-carousel">
+                    <button class="favorite-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects8/ceD4c1xA9dROhycNscBMXaQGhEJ2SQ9YMsvkmlLG1.jpg" alt="Montiva by Vida 5" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects8/img31.jpg" alt="Montiva by Vida 5" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects8/snapedit_17520610073801.jpeg" alt="Montiva by Vida 5" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects8/umuznbhaRUy26Q49Y59mZvi76dsmKxw8bJjdHqDT1.jpg" alt="Montiva by Vida 5" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects8/vHAEiBU3nyBGKXdXGZE8qYn0PV1xVTmbP7cajTZy1.jpg" alt="Montiva by Vida 5" />
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <h3>The Beach House Fahid</h3>
+                    <p class="property-type">Apartment</p>
+                    <div class="property-price">4,132,000 AED</div>
+                    <p class="property-status">Residential for Sale</p>
+                    <div class="property-meta">
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                            Developer: Aldar
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Area: Al Fahid, Abu Dhabi
+                        </div>
+                        <!-- Listed On removed -->
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Handover Date: 12-2029
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 第九个房产卡片 -->
+            <div class="property-card">
+                <div class="property-carousel">
+                    <button class="favorite-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects9/16[1].jpg" alt="The Arthouse" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects9/17[1].png" alt="The Arthouse" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects9/1[1].jpg" alt="The Arthouse" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects9/40[1].jpg" alt="The Arthouse" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects9/58[1].jpg" alt="The Arthouse" />
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <h3>The Arthouse</h3>
+                    <p class="property-type">Apartment | Villa</p>
+                    <div class="property-price">3,300,000 AED</div>
+                    <p class="property-status">Residential for Sale</p>
+                    <div class="property-meta">
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                            Developer: Aldar
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Area: Saadiyat Island, Abu Dhabi
+                        </div>
+                        <!-- Listed On removed -->
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Handover Date: 06-2028
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 第十个房产卡片 -->
+            <div class="property-card">
+                <div class="property-carousel">
+                    <button class="favorite-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects10/48bde4e785c502476a9cb4a749470933cb2fea20_2_15641.jpg" alt="Montiva by Vida 7" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects10/Cavaliarch11.jpg" alt="Montiva by Vida 7" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects10/Cavaliarch21.jpg" alt="Montiva by Vida 7" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects10/cavalli-couture-471.jpg" alt="Montiva by Vida 7" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects10/img81.jpg" alt="Montiva by Vida 7" />
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <h3>Cavalli Couture</h3>
+                    <p class="property-type">Apartment</p>
+                    <div class="property-price">21,904,000 AED</div>
+                    <p class="property-status">Residential for Sale</p>
+                    <div class="property-meta">
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                            Developer: Damac
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Area: Al Safa, Dubai
+                        </div>
+                        <!-- Listed On removed -->
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Handover Date: 12-2025
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 第十一个房产卡片 -->
+            <div class="property-card">
+                <div class="property-carousel">
+                    <button class="favorite-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects11/1341.jpg" alt="Montiva by Vida 8" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects11/1361.jpg" alt="Montiva by Vida 8" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects11/1381.jpg" alt="Montiva by Vida 8" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects11/291.jpg" alt="Montiva by Vida 8" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects11/431.jpg" alt="Montiva by Vida 8" />
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <h3>Damac Bay 2</h3>
+                    <p class="property-type">Apartment | Duplex</p>
+                    <div class="property-price">7,342,000 AED</div>
+                    <p class="property-status">Residential for Sale</p>
+                    <div class="property-meta">
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                            Developer: Damac
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Area: Dubai Harbour, Dubai
+                        </div>
+                        <!-- Listed On removed -->
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Handover Date: 12-2027
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 第十二个房产卡片 -->
+            <div class="property-card">
+                <div class="property-carousel">
+                    <button class="favorite-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects12/301.jpg" alt="Montiva by Vida 9" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects12/331.jpg" alt="Montiva by Vida 9" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects12/431.jpg" alt="Montiva by Vida 9" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects12/451.jpg" alt="Montiva by Vida 9" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects12/621.jpg" alt="Montiva by Vida 9" />
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <h3>Chelsea Residences</h3>
+                    <p class="property-type">Apartment</p>
+                    <div class="property-price">2,170,000 AED</div>
+                    <p class="property-status">Residential for Sale</p>
+                    <div class="property-meta">
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                            Developer: Damac
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Area: Dubai Maritime City, Dubai
+                        </div>
+                        <!-- Listed On removed -->
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Handover Date: 12-2029
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 第十三个房产卡片 -->
+            <div class="property-card">
+                <div class="property-carousel">
+                    <button class="favorite-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects14/1d43bfeb-a6e3-40f8-aa33-a5ea36d52fcc.webp" alt="Montiva by Vida 10" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects14/807fb06f-9ed3-4332-998f-de1bedbbb6f2.webp" alt="Montiva by Vida 10" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects14/9b0e2bbb-9402-4f1f-84ff-ec0c0ae93484.webp" alt="Montiva by Vida 10" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects14/a34b7521-5ae0-42c4-a2ff-69d056a1b3f5.webp" alt="Montiva by Vida 10" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects14/b14dd346-5d7f-4bc6-9f8b-624c8e40705f.webp" alt="Montiva by Vida 10" />
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <h3>Falcon Island</h3>
+                    <p class="property-type">Villa | Townhouse</p>
+                    <div class="property-price">7,800,000 AED</div>
+                    <p class="property-status">Residential for Sale</p>
+                    <div class="property-meta">
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                            Developer: Al Hamra Real Estate
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Area: Al Hamra Village, Ras Al Khaimah
+                        </div>
+                        <!-- Listed On removed -->
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Handover Date: 01-2025
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 第十四个房产卡片 -->
+            <div class="property-card">
+                <div class="property-carousel">
+                    <button class="favorite-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects15/3d1d02de-677f-496c-910c-204d57884f98.jpg" alt="Montiva by Vida 11" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects15/539e466d-482d-41ff-aa48-c5e2f93ab5ea.jpg" alt="Montiva by Vida 11" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects15/8f5e1395-1147-485e-9d5e-98c1ecb9db1c.jpg" alt="Montiva by Vida 11" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects15/baadc55e-f530-4768-87bf-6dd501ec0116.jpg" alt="Montiva by Vida 11" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects15/baadc55e-f530-4768-87bf-6dd501ec0116.jpg" alt="Montiva by Vida 11" />
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <h3>Falcon Island</h3>
+                    <p class="property-type">Villa | Townhouse</p>
+                    <div class="property-price">1,190,000 AED</div>
+                    <p class="property-status">Residential for Sale</p>
+                    <div class="property-meta">
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                            Developer: Al Hamra Real Estate
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Area: Al Hamra Village, Ras Al Khaimah
+                        </div>
+                        <!-- Listed On removed -->
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Handover Date: 12-2024
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 第十五个房产卡片 -->
+            <div class="property-card">
+                <div class="property-carousel">
+                    <button class="favorite-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects16/1021.png" alt="DWTN Residences" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects16/121.jpg" alt="DWTN Residences" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects16/131.jpg" alt="DWTN Residences" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects16/81.jpg" alt="DWTN Residences" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects16/991.png" alt="DWTN Residences" />
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <h3>DWTN Residences</h3>
+                    <p class="property-type">Apartment | Duplex</p>
+                    <div class="property-price">1,860,000 AED</div>
+                    <p class="property-status">Residential for Sale</p>
+                    <div class="property-meta">
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                            Developer: Deyaar
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Area: Downtown Dubai, Dubai
+                        </div>
+                        <!-- Listed On removed -->
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Handover Date: 12-2029
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 第十六个房产卡片 -->
+            <div class="property-card">
+                <div class="property-carousel">
+                    <button class="favorite-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects17/11cf5424-3e83-4d78-9bd7-158cc31c3baf.webp" alt="Ember Park Five by Deyaar" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects17/2fc1c957-cc64-41fa-8315-9941caa0551d.webp" alt="Ember Park Five by Deyaar" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects17/5e3325ad-064f-4d0d-938a-48d3a8ac3e5a.webp" alt="Ember Park Five by Deyaar" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects17/a1abc379-0a22-42a3-9a0d-d2fa7c5e0a0c.webp" alt="Ember Park Five by Deyaar" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../../images_new/image/All Projects17/c06ca4f0-0d7b-48fb-a654-9911fd58357c.webp" alt="Ember Park Five by Deyaar" />
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <h3>Ember Park Five by Deyaar</h3>
+                    <p class="property-type">Apartment</p>
+                    <div class="property-price">704,187 AED</div>
+                    <p class="property-status">Residential for Sale</p>
+                    <div class="property-meta">
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                            Developer: Deyaar
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Area: Dubai Production City (IMPZ), Dubai
+                        </div>
+                        <!-- Listed On removed -->
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Handover Date: 12-2027
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚内容已删除 -->
+
+    <script>
+        // 房产卡片轮播初始化函数
+        function initPropertyCarousels() {
+            // 获取所有房产卡片轮播
+            const propertyCarousels = document.querySelectorAll('.property-carousel');
+            
+            propertyCarousels.forEach(carousel => {
+                const slidesContainer = carousel.querySelector('.carousel-slides');
+                const slides = carousel.querySelectorAll('.carousel-slide');
+                const indicators = carousel.querySelectorAll('.carousel-indicator');
+                let currentIndex = 0;
+                let intervalId;
+                
+                // 设置第一张幻灯片为可见
+                if (slides.length > 0) {
+                    slides.forEach(slide => {
+                        slide.style.opacity = '0';
+                        slide.style.zIndex = '1';
+                    });
+                    slides[currentIndex].style.opacity = '1';
+                    slides[currentIndex].style.zIndex = '2';
+                    
+                    // 设置第一张指示器为激活状态
+                    if (indicators.length > 0) {
+                        indicators[currentIndex].classList.add('active');
+                    }
+                }
+                
+                // 显示指定索引的幻灯片
+                function showSlide(index) {
+                    // 确保索引有效
+                    index = ((index % slides.length) + slides.length) % slides.length;
+                    
+                    // 隐藏所有幻灯片
+                    slides.forEach(slide => {
+                        slide.style.opacity = '0';
+                        slide.style.zIndex = '1';
+                    });
+                    
+                    // 移除所有指示器的激活状态
+                    indicators.forEach(indicator => {
+                        indicator.classList.remove('active');
+                    });
+                    
+                    // 显示指定幻灯片
+                    slides[index].style.opacity = '1';
+                    slides[index].style.zIndex = '2';
+                    
+                    // 激活指定指示器
+                    indicators[index].classList.add('active');
+                    
+                    currentIndex = index;
+                }
+                
+                // 启动自动轮播
+                function startCarousel() {
+                    intervalId = setInterval(() => {
+                        const nextIndex = (currentIndex + 1) % slides.length;
+                        showSlide(nextIndex);
+                    }, 3000); // 3秒轮播一次
+                }
+                
+                // 停止自动轮播
+                function stopCarousel() {
+                    if (intervalId) {
+                        clearInterval(intervalId);
+                    }
+                }
+                
+                // 为指示器添加点击事件
+                indicators.forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => {
+                        stopCarousel();
+                        showSlide(index);
+                        startCarousel();
+                    });
+                });
+                
+                // 鼠标悬停时停止轮播，离开时继续
+                carousel.addEventListener('mouseenter', stopCarousel);
+                carousel.addEventListener('mouseleave', startCarousel);
+                
+                // 启动轮播
+                startCarousel();
+            });
+        }
+
+        // 实现爱心按钮点击变红和散色效果
+        function initFavoriteButtons() {
+            // 获取所有爱心按钮
+            const favoriteButtons = document.querySelectorAll('.favorite-btn');
+            
+            // 为每个按钮添加点击事件
+            favoriteButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    
+                    // 切换active类
+                    const isActive = button.classList.toggle('active');
+                    
+                    // 如果是点击后激活，创建散色效果
+                    if (isActive) {
+                        createHeartBurstEffect(button);
+                    }
+                });
+            });
+        }
+
+        // 创建爱心散色效果
+        function createHeartBurstEffect(button) {
+            const buttonRect = button.getBoundingClientRect();
+            const buttonX = buttonRect.left + buttonRect.width / 2;
+            const buttonY = buttonRect.top + buttonRect.height / 2;
+            
+            // 创建容器来放置粒子，确保相对于按钮定位
+            const particleContainer = document.createElement('div');
+            particleContainer.style.position = 'fixed';
+            particleContainer.style.pointerEvents = 'none';
+            particleContainer.style.zIndex = '1000';
+            document.body.appendChild(particleContainer);
+            
+            // 创建10个粒子
+            for (let i = 0; i < 10; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('heart-particle');
+                
+                // 随机大小
+                const size = Math.random() * 10 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.position = 'absolute';
+                
+                // 随机位置 - 围绕按钮中心
+                const angle = Math.random() * Math.PI * 2;
+                const radius = Math.random() * 20 + 10; // 减小半径，让粒子更靠近按钮
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
+                
+                // 设置粒子位置（相对于容器）
+                particle.style.left = `${buttonX + x - size/2}px`;
+                particle.style.top = `${buttonY + y - size/2}px`;
+                particle.style.opacity = '1';
+                
+                // 添加到容器
+                particleContainer.appendChild(particle);
+                
+                // 动画结束后移除粒子
+                setTimeout(() => {
+                    particle.remove();
+                }, 1000);
+            }
+            
+            // 1秒后移除容器
+            setTimeout(() => {
+                particleContainer.remove();
+            }, 1000);
+        }
+
+        // 页面加载完成后执行初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            initPropertyCarousels();
+            initFavoriteButtons();
+        });
+    </script>
+    
+    <!-- 在页面底部添加Properties按钮 -->
+    <div style="max-width: 1400px; margin: 4rem auto; padding: 0 1rem; text-align: center;">
+        <a href="/index.html#properties" id="view-properties-button" style="
+            display: inline-block;
+            background-color: #6c63ff;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        ">
+            Properties
+        </a>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const languageButton = document.querySelector('.language-button');
+        const languageDropdown = document.querySelector('.language-dropdown');
+        const languageOptions = document.querySelectorAll('.language-option');
+        const currentLanguage = window.currentLanguage || 'en';
+        
+        // 定义各语言的翻译内容
+        const translations = {
+          en: {
+            sectionTitle: 'Featured Properties',
+            sectionSubtitle: 'Explore our premium selection of properties',
+            propertyType: {
+              '公寓': 'Apartment',
+              '别墅': 'Villa',
+              '联排别墅': 'Townhouse',
+              '顶层公寓': 'Penthouse',
+              '复式公寓': 'Duplex'
+            },
+            propertyStatus: 'Residential for Sale',
+            propertyMeta: {
+              developer: 'Developer',
+              area: 'Area',
+              handoverDate: 'Handover Date'
+            }
+          },
+          zh: {
+            sectionTitle: '精选房产',
+            sectionSubtitle: '探索我们精选的优质房产',
+            propertyType: {
+              'Apartment': '公寓',
+              'Villa': '别墅',
+              'Townhouse': '联排别墅',
+              'Penthouse': '顶层公寓',
+              'Duplex': '复式公寓'
+            },
+            propertyStatus: '住宅出售',
+            propertyMeta: {
+              developer: '开发商',
+              area: '区域',
+              handoverDate: '交付日期'
+            },
+            viewPropertiesButton: '查看房产'
+          },
+          ar: {
+            sectionTitle: 'العقارات المميزة',
+            sectionSubtitle: 'استكشف مجموعتنا المختارة من العقارات العالية الجودة',
+            propertyType: {
+              'Apartment': 'شقة',
+              'Villa': 'فيلا',
+              'Townhouse': 'منزل نصفي',
+              'Penthouse': 'شقة علوية',
+              'Duplex': 'دوبلكس'
+            },
+            propertyStatus: 'سكني للبيع',
+            propertyMeta: {
+              developer: 'المطور',
+              area: 'المنطقة',
+              handoverDate: 'تاريخ التسليم'
+            },
+            viewPropertiesButton: 'عرض العقارات'
+          }
+        };
+        
+        // 设置初始按钮文本
+        updateButtonText(currentLanguage);
+        
+        // 初始化页面语言
+        updatePageLanguage(currentLanguage);
+        
+        // 切换下拉菜单显示/隐藏
+        languageButton.addEventListener('click', function(e) {
+          e.stopPropagation();
+          languageDropdown.classList.toggle('show');
+        });
+        
+        // 点击其他区域关闭下拉菜单
+        document.addEventListener('click', function() {
+          if (languageDropdown.classList.contains('show')) {
+            languageDropdown.classList.remove('show');
+          }
+        });
+        
+        // 防止下拉菜单内部点击事件冒泡
+        languageDropdown.addEventListener('click', function(e) {
+          e.stopPropagation();
+        });
+        
+        // 语言选择事件
+        languageOptions.forEach(option => {
+          option.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            // 更新当前语言
+            if (window.updateCurrentLanguage) {
+              window.updateCurrentLanguage(lang);
+            } else {
+              window.currentLanguage = lang;
+            }
+            
+            // 更新页面内容
+            updatePageLanguage(lang);
+            
+            // 更新按钮文本
+            updateButtonText(lang);
+            
+            // 关闭下拉菜单
+            languageDropdown.classList.remove('show');
+          });
+        });
+        
+        // 更新按钮显示文本
+        function updateButtonText(lang) {
+          const langMap = {
+            'en': 'EN',
+            'zh': '中',
+            'ar': 'ع'
+          };
+          languageButton.textContent = langMap[lang] || 'EN';
+        }
+        
+        // 更新页面语言的函数
+        function updatePageLanguage(lang) {
+          console.log(`Updating Featured Properties page language to: ${lang}`);
+          const translationsObj = translations[lang];
+          
+          if (translationsObj) {
+            // 更新标题和副标题
+            const sectionHeader = document.querySelector('.section-header');
+            if (sectionHeader) {
+              const title = sectionHeader.querySelector('h2');
+              const subtitle = sectionHeader.querySelector('p');
+              if (title) title.textContent = translationsObj.sectionTitle;
+              if (subtitle) subtitle.textContent = translationsObj.sectionSubtitle;
+            }
+            
+            // 更新房产类型
+            const propertyTypes = document.querySelectorAll('.property-type');
+            propertyTypes.forEach(typeElement => {
+              const typeText = typeElement.textContent.trim();
+              // 查找对应的翻译
+              for (const [key, value] of Object.entries(translationsObj.propertyType)) {
+                if (typeText.includes(key)) {
+                  typeElement.textContent = typeText.replace(key, value);
+                  break;
+                }
+              }
+            });
+            
+            // 更新房产状态
+            const propertyStatuses = document.querySelectorAll('.property-status');
+            propertyStatuses.forEach(statusElement => {
+              statusElement.textContent = translationsObj.propertyStatus;
+            });
+            
+            // 更新房产卡片中的静态文本
+            const metaItems = document.querySelectorAll('.property-meta .meta-item');
+            metaItems.forEach(item => {
+              const text = item.textContent.trim();
+              // 匹配开发商标签并替换（移除^锚点，允许在任何位置匹配）
+              if (text.includes('Developer:') || text.includes('开发商:') || text.includes('المطور:')) {
+                item.innerHTML = item.innerHTML.replace(/(Developer:|开发商:|المطور:)/, translationsObj.propertyMeta.developer + ':');
+              } 
+              // 匹配区域标签并替换（移除^锚点，允许在任何位置匹配）
+              else if (text.includes('Area:') || text.includes('区域:') || text.includes('المنطقة:')) {
+                item.innerHTML = item.innerHTML.replace(/(Area:|区域:|المنطقة:)/, translationsObj.propertyMeta.area + ':');
+              } 
+              // 匹配交付日期标签并替换（移除^锚点，允许在任何位置匹配）
+              else if (text.includes('Handover Date:') || text.includes('交付日期:') || text.includes('تاريخ التسليم:')) {
+                item.innerHTML = item.innerHTML.replace(/(Handover Date:|交付日期:|تاريخ التسليم:)/, translationsObj.propertyMeta.handoverDate + ':');
+              }
+            });
+            
+            // 更新底部的Properties按钮文本
+            const viewPropertiesButton = document.getElementById('view-properties-button');
+            if (viewPropertiesButton) {
+              viewPropertiesButton.textContent = translationsObj.viewPropertiesButton || 'Properties';
+            }
+            if (window.updatePageLanguage && lang !== window.currentLanguage) {
+              try {
+                window.updatePageLanguage(lang);
+              } catch (error) {
+                console.log('Global updatePageLanguage function error:', error);
+                // 忽略错误，继续使用本地实现
+              }
+            }
+          } else {
+            console.error('Translations not found for language:', lang);
+          }
+        }
+      });
+    </script>

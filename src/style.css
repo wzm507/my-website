@@ -329,22 +329,34 @@ a:hover {
 }
 
 .view-all-btn {
-  display: inline-block;
-  background-color: #6c63ff;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background-color: white;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  border-radius: var(--border-radius);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  transition: var(--transition);
   white-space: nowrap;
 }
 
 .view-all-btn:hover {
-  background-color: #5a54d9;
+  background-color: var(--secondary-color);
+  color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(108, 99, 255, 0.3);
+  box-shadow: var(--shadow-hover);
+}
+
+.view-all-btn .linear-button-icon {
+  transition: var(--transition);
+}
+
+.view-all-btn:hover .linear-button-icon {
+  transform: translateX(3px);
 }
 
 /* 响应式设计 */
@@ -701,10 +713,20 @@ a:hover {
 
 /* 主题文本样式 */
 .stats-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   text-align: left;
   max-width: 1400px;
   margin: 0 auto 4rem;
   padding: 0 1rem;
+  gap: 2rem;
+}
+
+.stats-text {
+  flex: 1;
+  min-width: 0;
 }
 
 .stats-header h2 {
@@ -718,6 +740,38 @@ a:hover {
   font-size: 1.1rem;
   max-width: 800px;
   margin: 0;
+}
+
+/* 线性按钮样式 */
+.linear-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background-color: transparent;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.linear-button:hover {
+  background-color: var(--secondary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.linear-button-icon {
+  transition: var(--transition);
+}
+
+.linear-button:hover .linear-button-icon {
+  transform: translateX(3px);
 }
 
 .stats-grid {
@@ -789,52 +843,243 @@ a:hover {
 /* Contact Section */
 .contact {
   padding: 6rem 2rem;
-  background-color: var(--light-color);
+  background-color: #1F2122;
+  color: white;
+  position: relative;
+  overflow: hidden;
 }
 
 .contact-content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
+.contact-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.contact-header h2 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.contact-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #2563eb;
+}
+
+.contact-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* 新的线性布局 */
 .contact-form {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 表单行 */
+.form-row {
+  display: flex;
   gap: 1.5rem;
-  margin-top: 3rem;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 1rem 1.5rem;
-  border: 1px solid #ddd;
+  padding: 1.2rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
 }
 
 .contact-form textarea {
   resize: vertical;
-  min-height: 150px;
+  min-height: 180px;
+}
+
+/* 提交按钮样式 */
+.form-submit {
+  text-align: center;
+  margin-top: 0.5rem;
 }
 
 .contact-form button {
-  background-color: var(--primary-color);
+  background-color: #2563eb;
   color: white;
   border: none;
-  padding: 1.2rem;
+  padding: 1.2rem 3rem;
   border-radius: 8px;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .contact-form button:hover {
-  background-color: #34495e;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
+   background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+  }
+
+/* 成功消息样式 */
+.success-message {
+  display: none;
+  background-color: #10b981;
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 500;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-form button:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* 联系信息卡片 */
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.contact-card {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card-icon {
+  font-size: 2.5rem;
+  color: #2563eb;
+  margin-bottom: 1.5rem;
+}
+
+.contact-card h3 {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.contact-card p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.contact-card a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+  .form-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .contact-header h2 {
+    font-size: 2rem;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .contact-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact {
+    padding: 4rem 1.5rem;
+  }
+  
+  .contact-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 1rem;
+  }
+  
+  .contact-form button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
 }
 
 /* Footer */
@@ -860,18 +1105,50 @@ a:hover {
   letter-spacing: -1px;
 }
 
-.footer-links a,
-.footer-social a {
+.footer-links a {
   display: block;
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 0.8rem;
   transition: var(--transition);
 }
 
-.footer-links a:hover,
-.footer-social a:hover {
+.footer-links a:hover {
   color: var(--secondary-color);
   transform: translateX(5px);
+}
+
+.footer-social h4 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: #2563eb;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
 }
 
 .footer-copyright {
@@ -1113,25 +1390,24 @@ a:hover {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 10px;
+  gap: 8px;
   z-index: 10;
 }
 
 .carousel-indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid white;
-  background-color: transparent;
+  width: 30px;
+  height: 6px;
+  border-radius: 3px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .carousel-indicator.active {
-  background-color: white;
-  /* 保持圆形，移除椭圆长条效果 */
-  width: 12px;
-  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 30px;
+  border-radius: 3px;
 }
 
 /* Company Stats */
@@ -1146,14 +1422,14 @@ a:hover {
   padding: 2rem;
   border-radius: var(--border-radius);
   text-align: center;
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   flex: 1;
   transition: var(--transition);
 }
 
 .company-stat:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .stat-number {
@@ -1315,5 +1591,166 @@ a:hover {
   100% {
     opacity: 0;
     transform: scale(0);
+  }
+}
+
+/* 新闻部分样式 */
+.news {
+  background-color: white;
+  padding: 6rem 2rem;
+}
+
+.news .section-header {
+  text-align: left;
+  max-width: 1400px;
+  margin: 0 auto 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.news-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.news .section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  line-height: 1.2;
+}
+
+.news .section-header p {
+  font-size: 1.1rem;
+  color: var(--light-text);
+  margin: 0;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.news-card {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.news-image-container {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.news-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-image-container img {
+  transform: scale(1.05);
+}
+
+.news-date {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.news-content {
+  padding: 1.5rem;
+}
+
+.news-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.news-content p {
+  font-size: 1rem;
+  color: var(--light-text);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.news-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.news-link:hover {
+  color: var(--secondary-color);
+}
+
+.news-link::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m12 5 7 7-7 7'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.news-link:hover::after {
+  transform: translateX(5px);
+}
+
+/* .news-footer 和 .view-all-news 样式已被移除，改用 .linear-button 样式 */
+
+/* 响应式设计 - 新闻部分 */
+@media (max-width: 1024px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .news {
+    padding: 4rem 1rem;
+  }
+  
+  .news .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .news-image-container {
+    height: 200px;
   }
 }

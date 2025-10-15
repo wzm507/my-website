@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - HOUSE</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+        /* 确保全局变量与主页完全一致 */
+        :root {
+            --primary-color: #333;
+            --secondary-color: #6c63ff;
+            --accent-color: #e74c3c;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --light-text: #7f8c8d;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+        
+        /* 右侧固定语言切换按钮样式 */
+        .fixed-language-switcher {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+        
+        .language-button {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: var(--transition);
+        }
+        
+        .language-button:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+    body {
+      line-height: 1.6;
+      color: var(--primary-color);
+    }
+
+    /* 导航栏 */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      background-color: rgba(31, 33, 34, 0.95);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary-color);
+    }
+
+    /* 页面内容 */
+    .about-page {
+      padding-top: 100px;
+      min-height: 100vh;
+    }
+
+    /* 关于我们头部 */
+    .about-header {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images_new/about/snapedit_17446406911301.jpeg');
+      background-size: cover;
+      background-position: center;
+      padding: 6rem 2rem;
+      text-align: center;
+      color: white;
+    }
+
+    .about-header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-header p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* 关于我们内容 */
+    .about-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .about-mission {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+
+    .about-mission-image {
+      flex: 1;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .about-mission-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .about-mission-text {
+      flex: 1;
+    }
+
+    .about-mission-text h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    .about-mission-text p {
+      font-size: 1.1rem;
+      color: var(--light-text);
+      margin-bottom: 1.5rem;
+    }
+
+    /* 公司价值观 */
+    .about-values {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .about-values h2 {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      color: var(--primary-color);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .value-card {
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .value-icon {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .value-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .value-card p {
+      color: var(--light-text);
+    }
+
+    /* 团队介绍 */
+    .about-team {
+      text-align: center;
+    }
+
+    .about-team h2 {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      color: var(--primary-color);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .team-member {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .team-member-image {
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .team-member-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .team-member:hover .team-member-image img {
+      transform: scale(1.05);
+    }
+
+    /* 团队成员覆盖层 */
+    .team-member-image {
+      position: relative;
+    }
+
+    .team-member-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      padding: 1rem;
+    }
+
+    .team-member:hover .team-member-overlay {
+      opacity: 1;
+    }
+
+    .team-member-description {
+          color: white;
+          text-align: center;
+          font-size: 1rem;
+          line-height: 1.4;
+          margin: 0;
+        }
+        
+        /* 语言下拉菜单样式 */
+        .language-dropdown {
+          position: absolute;
+          right: 0;
+          top: 100%;
+          margin-top: 10px;
+          background-color: white;
+          border-radius: var(--border-radius);
+          box-shadow: var(--shadow);
+          display: none;
+          min-width: 120px;
+        }
+        
+        .language-dropdown.show {
+          display: block;
+        }
+        
+        .language-option {
+          width: 100%;
+          border: none;
+          background: none;
+          padding: 10px 15px;
+          text-align: left;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          font-size: 14px;
+        }
+        
+        .language-option:hover {
+          background-color: #f8f9fa;
+        }
+
+    .team-member-info {
+      padding: 1.5rem;
+    }
+
+    .team-member-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    .team-member-info p {
+      color: var(--light-text);
+      font-size: 0.9rem;
+    }
+
+    /* 页脚 */
+    .footer {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 3rem 2rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-brand {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo img {
+      height: 40px;
+    }
+
+    .footer-logo span {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .footer-tagline {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links-container {
+      flex: 2;
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--secondary-color);
+    }
+
+    .footer-social {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-link {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .social-link:hover {
+      color: var(--secondary-color);
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 1024px) {
+      .about-mission {
+        flex-direction: column;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem 2rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .about-header h1 {
+        font-size: 2.5rem;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links-container {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <a href="/" class="logo">
+      <img src="/images_new/LOGO/2.png" alt="HOUSE Logo">
+      <span>HOUSE</span>
+    </a>
+    <!-- 导航链接已移除 -->
+  </nav>
+
+  <!-- 关于我们头部 -->
+  <section class="about-header">
+    <h1>About Us</h1>
+    <p>Premium real estate platform in Dubai and UAE</p>
+  </section>
+
+  <!-- 关于我们内容 -->
+  <section class="about-content">
+    <!-- 公司使命 -->
+    <div class="about-mission">
+      <div class="about-mission-image">
+        <img src="/images_new/about/our.jpg" alt="Our Mission">
+      </div>
+      <div class="about-mission-text">
+        <h2>Our Mission</h2>
+        <p>Our mission is to redefine real estate in the customer's favor. We are committed to providing the most comprehensive and transparent real estate services in Dubai and the UAE.</p>
+        <p>With years of experience in the industry, we have built a reputation for excellence, integrity, and customer satisfaction. Our team of experts is dedicated to helping you find your dream property or sell your current one with ease.</p>
+        <p>We believe in putting our customers first, and we work tirelessly to ensure that every transaction is smooth, efficient, and profitable for all parties involved.</p>
+      </div>
+    </div>
+
+    <!-- 公司价值观 -->
+    <div class="about-values">
+      <h2>Our Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Integrity</h3>
+          <p>We believe in honesty, transparency, and ethical business practices in all our dealings.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Customer First</h3>
+          <p>Our customers are our top priority, and we strive to exceed their expectations every day.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Excellence</h3>
+          <p>We pursue excellence in everything we do, from our services to our customer support.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 团队介绍 -->
+    <div class="about-team">
+      <h2>Our Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="team-member-image">
+            <img src="/images_new/GSCYJS/9cb0cc7992f653170d75266f72515657.jpg" alt="Wang Yang">
+            <div class="team-member-overlay">
+              <p class="team-member-description" data-lang-key="wangyang-desc">拥有20年房地产行业经验，带领公司成为迪拜领先的房产平台。</p>
+            </div>
+          </div>
+          <div class="team-member-info">
+            <h3>Wang Yang</h3>
+            <p>CEO & Founder</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="team-member-image">
+            <img src="/images_new/about/snapedit_17446406911301.jpeg" alt="Sarah Johnson">
+            <div class="team-member-overlay">
+              <p class="team-member-description" data-lang-key="sarah-desc">资深销售专家，擅长制定战略销售计划，带领团队创造卓越业绩。</p>
+            </div>
+          </div>
+          <div class="team-member-info">
+            <h3>Sarah Johnson</h3>
+            <p>Head of Sales</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="team-member-image">
+            <img src="/images_new/about/snapedit_17446406911301.jpeg" alt="Michael Brown">
+            <div class="team-member-overlay">
+              <p class="team-member-description" data-lang-key="michael-desc">专业房产顾问，熟悉迪拜房产市场，为客户提供个性化投资建议。</p>
+            </div>
+          </div>
+          <div class="team-member-info">
+            <h3>Michael Brown</h3>
+            <p>Property Consultant</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="team-member-image">
+            <img src="/images_new/about/snapedit_17446406911301.jpeg" alt="Emily Davis">
+            <div class="team-member-overlay">
+              <p class="team-member-description" data-lang-key="emily-desc">客户支持专家，致力于为客户提供优质服务，解决各种房产相关问题。</p>
+            </div>
+          </div>
+          <div class="team-member-info">
+            <h3>Emily Davis</h3>
+            <p>Customer Support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- 左侧Logo区域 -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="/images_new/LOGO/2.png" alt="HOUSE Logo">
+          <span>HOUSE</span>
+        </div>
+        <p class="footer-tagline">Premium real estate platform in Dubai and UAE</p>
+      </div>
+      
+      <!-- 中间链接区域 -->
+      <div class="footer-links-container">
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Properties</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="#">Buy Property</a></li>
+            <li><a href="#">Sell Property</a></li>
+            <li><a href="#">Rent Property</a></li>
+            <li><a href="#">Property Management</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Contact Us</h4>
+          <ul class="footer-links">
+            <li>Info@hawsonhouse.com</li>
+            <li>+971 506956105</li>
+            <li>Dubai Marina, Dubai</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- 右侧社交媒体区域 -->
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <!-- Facebook 线性图标 -->
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <!-- Twitter 线性图标 -->
+          <a href="#" class="social-link" aria-label="Twitter">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+            </svg>
+          </a>
+          <!-- Instagram 线性图标 -->
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+            </svg>
+          </a>
+          <!-- LinkedIn 线性图标 -->
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect width="4" height="12" x="2" y="9"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+    
+    <script>
+      // 导航栏滚动效果
+      window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+          navbar.style.padding = '1rem 4rem';
+        } else {
+          navbar.style.padding = '1.5rem 4rem';
+        }
+      });
+      
+      document.addEventListener('DOMContentLoaded', function() {
+        // 定义各语言的翻译内容
+        const aboutTranslations = {
+          en: {
+            pageTitle: 'About Us',
+            pageSubtitle: 'Our team and story',
+            companyDesc: 'Welcome to our real estate platform. We are dedicated to providing high-quality real estate services in Dubai and the UAE. With years of experience in the industry, we have built a professional team committed to helping clients find their dream properties.',
+            companyDescDetail1: 'With years of experience in the industry, we have built a reputation for excellence, integrity, and customer satisfaction.',
+            companyDescDetail2: 'Our team of experts is dedicated to helping you find your dream property or sell your current one with ease.',
+            companyDescDetail3: 'We believe in putting our customers first, and we work tirelessly to ensure that every transaction is smooth, efficient, and profitable for all parties involved.',
+            missionTitle: 'Our Mission',
+            valuesTitle: 'Our Values',
+            teamSectionTitle: 'Our Team',
+            // 价值观卡片翻译
+            integrityTitle: 'Integrity',
+            integrityDesc: 'We believe in honesty, transparency, and ethical business practices in all our dealings.',
+            customerFirstTitle: 'Customer First',
+            customerFirstDesc: 'Our customers are our top priority, and we strive to exceed their expectations every day.',
+            excellenceTitle: 'Excellence',
+            excellenceDesc: 'We pursue excellence in everything we do, from our services to our customer support.',
+            // 团队成员翻译
+            wangyangName: 'Wang Yang',
+            wangyangPosition: 'CEO & Founder',
+            sarahName: 'Sarah Johnson',
+            sarahPosition: 'Head of Sales',
+            michaelName: 'Michael Brown',
+            michaelPosition: 'Property Consultant',
+            emilyName: 'Emily Davis',
+            emilyPosition: 'Customer Support',
+            // 团队成员描述
+            wangyangDesc: "With 20 years of experience in the real estate industry, leading the company to become a leading property platform in Dubai.",
+            sarahDesc: "Senior sales expert, specialized in developing strategic sales plans and leading teams to achieve outstanding performance.",
+            michaelDesc: "Professional property consultant, familiar with the Dubai real estate market, providing personalized investment advice to clients.",
+            emilyDesc: "Customer support expert, dedicated to providing quality service and solving various property-related issues for clients.",
+            // 页脚链接翻译
+            footerTagline: 'Premium real estate platform in Dubai and UAE',
+            quickLinks: 'Quick Links',
+            services: 'Services',
+            contactUs: 'Contact Us',
+            followUs: 'Follow Us',
+            backToHome: 'Back to Home',
+            // 页脚链接文本
+            footerHome: 'Home',
+            footerProperties: 'Properties',
+            footerAboutUs: 'About Us',
+            footerContact: 'Contact',
+            footerBuyProperty: 'Buy Property',
+            footerSellProperty: 'Sell Property',
+            footerRentProperty: 'Rent Property',
+            footerPropertyManagement: 'Property Management',
+            // 导航栏翻译
+            navHome: 'Home',
+            navBuy: 'Buy',
+            navProjects: 'Projects',
+            navServices: 'Services',
+            navContact: 'Contact',
+            navAbout: 'About Us',
+            logoText: 'HOUSE'
+          },
+          zh: {
+            pageTitle: '关于我们',
+            pageSubtitle: '我们的团队和故事',
+            companyDesc: '欢迎来到我们的房地产平台。我们致力于在迪拜和阿联酋提供高质量的房地产服务。凭借多年的行业经验，我们组建了一支专业团队，致力于帮助客户找到他们梦想中的房产。',
+            companyDescDetail1: '凭借多年的行业经验，我们建立了卓越、诚信和客户满意度的声誉。',
+            companyDescDetail2: '我们的专家团队致力于帮助您轻松找到理想的房产或出售当前房产。',
+            companyDescDetail3: '我们坚持以客户为中心，不懈努力确保每一笔交易对所有相关方都顺利、高效且有利可图。',
+            missionTitle: '我们的使命',
+            valuesTitle: '我们的价值观',
+            teamSectionTitle: '我们的团队',
+            // 价值观卡片翻译
+            integrityTitle: '诚信正直',
+            integrityDesc: '我们在所有业务往来中坚持诚实、透明和道德的商业实践。',
+            customerFirstTitle: '客户至上',
+            customerFirstDesc: '客户是我们的首要优先事项，我们每天都努力超越他们的期望。',
+            excellenceTitle: '追求卓越',
+            excellenceDesc: '我们在所有工作中追求卓越，从服务到客户支持都力求完美。',
+            // 团队成员翻译
+            wangyangName: '王洋',
+            wangyangPosition: '首席执行官 & 创始人',
+            sarahName: '萨拉·约翰逊',
+            sarahPosition: '销售主管',
+            michaelName: '迈克尔·布朗',
+            michaelPosition: '房产顾问',
+            emilyName: '艾米丽·戴维斯',
+            emilyPosition: '客户支持',
+            // 团队成员描述
+            wangyangDesc: "拥有20年房地产行业经验，带领公司成为迪拜领先的房产平台。",
+            sarahDesc: "资深销售专家，擅长制定战略销售计划，带领团队创造卓越业绩。",
+            michaelDesc: "专业房产顾问，熟悉迪拜房产市场，为客户提供个性化投资建议。",
+            emilyDesc: "客户支持专家，致力于为客户提供优质服务，解决各种房产相关问题。",
+            // 页脚链接翻译
+            footerTagline: '迪拜和阿联酋的高端房地产平台',
+            quickLinks: '快速链接',
+            services: '服务',
+            contactUs: '联系我们',
+            followUs: '关注我们',
+            backToHome: '返回首页',
+            // 页脚链接文本
+            footerHome: '首页',
+            footerProperties: '房产',
+            footerAboutUs: '关于我们',
+            footerContact: '联系我们',
+            footerBuyProperty: '购买房产',
+            footerSellProperty: '出售房产',
+            footerRentProperty: '租赁房产',
+            footerPropertyManagement: '房产管理',
+            // 导航栏翻译
+            navHome: '首页',
+            navBuy: '购买',
+            navProjects: '项目',
+            navServices: '服务',
+            navContact: '联系我们',
+            navAbout: '关于我们',
+            logoText: '豪森房产'
+          },
+          ar: {
+            pageTitle: 'من نحن',
+            pageSubtitle: 'فريقنا وقصتنا',
+            companyDesc: 'مرحبا بك في منصتنا العقارية. نحن متخصصون في تقديم خدمات عقارية عالية الجودة في دبي والإمارات العربية المتحدة. مع سنوات من الخبرة في الصناعة، قمنا بإنشاء فريق احترافي متخصص في مساعدة العملاء في العثور على عقاراتهم المثالية.',
+            companyDescDetail1: 'مع سنوات من الخبرة في الصناعة، قدمنا سمعة للتميز والنزاهة وشبونة العميل.',
+            companyDescDetail2: 'فريقنا من الخبراء متخصص في مساعدتك على العثور على عقارك الأحلام أو بيع عقارك الحالي بسهولة.',
+            companyDescDetail3: 'نحن نؤمن بوضع العملاء في المقام الأول، ونحن نعمل بلا كلل لضمان أن يكون كل صفقة سلسة وفعالة ومكسبية للجميع المشاركين فيها.',
+            missionTitle: 'رسالتنا',
+            valuesTitle: 'قيمنا',
+            teamSectionTitle: 'فريقنا',
+            // 价值观卡片翻译
+            integrityTitle: 'النزاهة',
+            integrityDesc: 'نحن نؤمن بالصدق والشفافية والممارسات التجارية الأخلاقية في جميع معاملاتنا.',
+            customerFirstTitle: 'العملاء في المقام الأول',
+            customerFirstDesc: 'عملاؤنا هى أولويتنا الرئيسية، ونحن نسعى لتفوق توقعاتهم كل يوم.',
+            excellenceTitle: 'التميز',
+            excellenceDesc: 'نحن نسعى للتميز في كل ما نقوم به، من خدماتنا إلى دعم العملاء.',
+            // 团队成员翻译
+            wangyangName: 'و wang yang',
+            wangyangPosition: 'الرئيس التنفيذي & المؤسس',
+            sarahName: 'سارة جونسون',
+            sarahPosition: 'رئيس التسويق',
+            michaelName: 'مايكل براون',
+            michaelPosition: 'مستشار عقاري',
+            emilyName: 'إيميلي ديفيس',
+            emilyPosition: 'دعم العملاء',
+            // 团队成员描述
+            wangyangDesc: "مع 20 عامًا من الخبرة في قطاع العقارات، قيادته للشركة لتصبح منصة عقارية رائدة في دبي.",
+            sarahDesc: "خبير مبيعات، متخصص في تطوير خطط مبيعات استراتيجية وتوجيه الفرق لتحقيق أداء متميز.",
+            michaelDesc: "مستشار عقاري محترف، معروف بسوق العقارات في دبي، يقدم مشورة استثمارية شخصية للعملاء.",
+            emilyDesc: "خبير دعم العملاء، متخصص في تقديم خدمة عالية الجودة وحل مشكلات العقارات المختلفة للعملاء.",
+            // 页脚链接翻译
+            footerTagline: 'منصة عقارية رائدة في دبي والإمارات العربية المتحدة',
+            quickLinks: 'روابط سريعة',
+            services: 'الخدمات',
+            contactUs: 'اتصل بنا',
+            followUs: 'تابعنا',
+            backToHome: 'العودة إلى الرئيسية',
+            // 页脚链接文本
+            footerHome: 'الرئيسية',
+            footerProperties: 'العقارات',
+            footerAboutUs: 'من نحن',
+            footerContact: 'اتصل بنا',
+            footerBuyProperty: 'شراء عقار',
+            footerSellProperty: 'بيع عقار',
+            footerRentProperty: 'إيجار عقار',
+            footerPropertyManagement: 'إدارة العقارات',
+            // 导航栏翻译
+            navHome: 'الرئيسية',
+            navBuy: 'شراء',
+            navProjects: 'المشاريع',
+            navServices: 'الخدمات',
+            navContact: 'اتصل بنا',
+            navAbout: 'من نحن',
+            logoText: '豪森房产'
+          }
+        };
+        
+        // 获取当前语言设置，从localStorage或window中获取
+        let currentLanguage = localStorage.getItem('preferredLanguage') || 'en';
+        
+        // 定义语言切换函数
+        window.switchAboutLanguage = function(lang) {
+          console.log('切换About页面语言到:', lang);
+          currentLanguage = lang;
+          window.currentLanguage = lang;
+          localStorage.setItem('preferredLanguage', lang);
+          
+          // 更新页面内容
+          updateAboutPageContent(lang);
+        };
+        
+        // 定义全局语言更新函数，供其他页面调用
+        window.updateCurrentLanguage = function(lang) {
+          window.switchAboutLanguage(lang);
+        };
+        
+        // 更新页面内容函数
+        function updateAboutPageContent(lang) {
+          const translations = aboutTranslations[lang];
+          
+          if (translations) {
+            // 更新页面标题和副标题
+            const pageTitle = document.querySelector('.about-header h1');
+            const pageSubtitle = document.querySelector('.about-header p');
+            if (pageTitle) pageTitle.textContent = translations.pageTitle;
+            if (pageSubtitle) pageSubtitle.textContent = translations.pageSubtitle;
+            
+            // 更新公司介绍和使命价值观标题
+            const companyDescParagraphs = document.querySelectorAll('.about-mission-text p');
+            if (companyDescParagraphs.length > 0) {
+              companyDescParagraphs[0].textContent = translations.companyDesc;
+            }
+            if (companyDescParagraphs.length > 1) {
+              companyDescParagraphs[1].textContent = translations.companyDescDetail1;
+            }
+            if (companyDescParagraphs.length > 2) {
+              companyDescParagraphs[2].textContent = translations.companyDescDetail2;
+            }
+            if (companyDescParagraphs.length > 3) {
+              companyDescParagraphs[3].textContent = translations.companyDescDetail3;
+            }
+            
+            // 更新使命和价值观标题
+            const missionTitle = document.querySelector('.about-mission-text h2');
+            const valuesTitle = document.querySelector('.about-values h2');
+            if (missionTitle) missionTitle.textContent = translations.missionTitle;
+            if (valuesTitle) valuesTitle.textContent = translations.valuesTitle;
+            
+            // 更新团队部分标题
+            const teamSectionTitle = document.querySelector('.about-team h2');
+            if (teamSectionTitle) teamSectionTitle.textContent = translations.teamSectionTitle;
+            
+            // 更新团队成员介绍
+            const wangyangDesc = document.querySelector('[data-lang-key="wangyang-desc"]');
+            const sarahDesc = document.querySelector('[data-lang-key="sarah-desc"]');
+            const michaelDesc = document.querySelector('[data-lang-key="michael-desc"]');
+            const emilyDesc = document.querySelector('[data-lang-key="emily-desc"]');
+            if (wangyangDesc) wangyangDesc.textContent = translations.wangyangDesc;
+            if (sarahDesc) sarahDesc.textContent = translations.sarahDesc;
+            if (michaelDesc) michaelDesc.textContent = translations.michaelDesc;
+            if (emilyDesc) emilyDesc.textContent = translations.emilyDesc;
+            
+            // 更新页脚内容
+            const footerTagline = document.querySelector('.footer-tagline');
+            const footerQuickLinks = document.querySelector('.footer-column h4:first-child');
+            const footerServices = document.querySelector('.footer-column h4:nth-child(2)');
+            const footerContact = document.querySelector('.footer-column h4:nth-child(3)');
+            const footerFollowUs = document.querySelector('.footer-social h4');
+            
+            if (footerTagline) footerTagline.textContent = translations.footerTagline;
+            if (footerQuickLinks) footerQuickLinks.textContent = translations.quickLinks;
+            if (footerServices) footerServices.textContent = translations.services;
+            if (footerContact) footerContact.textContent = translations.contactUs;
+            if (footerFollowUs) footerFollowUs.textContent = translations.followUs;
+            
+            // 更新返回按钮文本 - 如果存在
+            const backButton = document.querySelector('.back-button');
+            if (backButton) {
+              backButton.innerHTML = `<i class="fas fa-arrow-left"></i> ${translations.backToHome}`;
+            }
+            
+            // 更新语言按钮显示
+            const languageButton = document.querySelector('.language-button');
+            if (languageButton) {
+              const langMap = {
+                'en': 'EN',
+                'zh': '中',
+                'ar': 'ع'
+              };
+              languageButton.textContent = langMap[lang] || 'EN';
+            }
+            
+            // 更新导航栏内容 - 导航链接已移除
+            // 保留注释，避免空代码块
+            
+            // 更新价值观卡片内容
+            const valueCards = document.querySelectorAll('.value-card');
+            if (valueCards.length >= 3) {
+              // Integrity卡片
+              const integrityCard = valueCards[0];
+              const integrityTitle = integrityCard.querySelector('h3');
+              const integrityDesc = integrityCard.querySelector('p');
+              if (integrityTitle) integrityTitle.textContent = translations.integrityTitle;
+              if (integrityDesc) integrityDesc.textContent = translations.integrityDesc;
+              
+              // Customer First卡片
+              const customerFirstCard = valueCards[1];
+              const customerFirstTitle = customerFirstCard.querySelector('h3');
+              const customerFirstDesc = customerFirstCard.querySelector('p');
+              if (customerFirstTitle) customerFirstTitle.textContent = translations.customerFirstTitle;
+              if (customerFirstDesc) customerFirstDesc.textContent = translations.customerFirstDesc;
+              
+              // Excellence卡片
+              const excellenceCard = valueCards[2];
+              const excellenceTitle = excellenceCard.querySelector('h3');
+              const excellenceDesc = excellenceCard.querySelector('p');
+              if (excellenceTitle) excellenceTitle.textContent = translations.excellenceTitle;
+              if (excellenceDesc) excellenceDesc.textContent = translations.excellenceDesc;
+            }
+            
+            // 更新团队成员信息
+            const teamMembers = document.querySelectorAll('.team-member');
+            if (teamMembers.length >= 4) {
+              // Wang Yang
+              const wangyangMember = teamMembers[0];
+              const wangyangName = wangyangMember.querySelector('.team-member-info h3');
+              const wangyangPosition = wangyangMember.querySelector('.team-member-info p');
+              if (wangyangName) wangyangName.textContent = translations.wangyangName;
+              if (wangyangPosition) wangyangPosition.textContent = translations.wangyangPosition;
+              
+              // Sarah Johnson
+              const sarahMember = teamMembers[1];
+              const sarahName = sarahMember.querySelector('.team-member-info h3');
+              const sarahPosition = sarahMember.querySelector('.team-member-info p');
+              if (sarahName) sarahName.textContent = translations.sarahName;
+              if (sarahPosition) sarahPosition.textContent = translations.sarahPosition;
+              
+              // Michael Brown
+              const michaelMember = teamMembers[2];
+              const michaelName = michaelMember.querySelector('.team-member-info h3');
+              const michaelPosition = michaelMember.querySelector('.team-member-info p');
+              if (michaelName) michaelName.textContent = translations.michaelName;
+              if (michaelPosition) michaelPosition.textContent = translations.michaelPosition;
+              
+              // Emily Davis
+              const emilyMember = teamMembers[3];
+              const emilyName = emilyMember.querySelector('.team-member-info h3');
+              const emilyPosition = emilyMember.querySelector('.team-member-info p');
+              if (emilyName) emilyName.textContent = translations.emilyName;
+              if (emilyPosition) emilyPosition.textContent = translations.emilyPosition;
+            }
+            
+            // 更新页脚链接文本
+            const footerLinks = document.querySelectorAll('.footer-links a');
+            if (footerLinks.length >= 8) {
+              // 快速链接部分
+              footerLinks[0].textContent = translations.footerHome;
+              footerLinks[1].textContent = translations.footerProperties;
+              footerLinks[2].textContent = translations.footerAboutUs;
+              footerLinks[3].textContent = translations.footerContact;
+              
+              // 服务部分
+              footerLinks[4].textContent = translations.footerBuyProperty;
+              footerLinks[5].textContent = translations.footerSellProperty;
+              footerLinks[6].textContent = translations.footerRentProperty;
+              footerLinks[7].textContent = translations.footerPropertyManagement;
+            }
+            
+            // 更新页脚logo文本
+            const footerLogoText = document.querySelector('.footer-logo span');
+            if (footerLogoText) {
+              footerLogoText.textContent = translations.logoText;
+            }
+          } else {
+            console.error('Translations not found for language:', lang);
+          }
+        }
+        
+        // 初始化语言切换器
+        function initAboutLanguageSwitcher() {
+          const languageButton = document.querySelector('.language-button');
+          const languageDropdown = document.querySelector('.language-dropdown');
+          const languageOptions = document.querySelectorAll('.language-option');
+          
+          if (languageButton && languageDropdown && languageOptions.length > 0) {
+            // 初始化语言按钮显示
+            const langMap = {
+              'en': 'EN',
+              'zh': '中',
+              'ar': 'ع'
+            };
+            languageButton.textContent = langMap[currentLanguage] || 'EN';
+            
+            // 切换下拉菜单显示/隐藏
+            languageButton.addEventListener('click', function(e) {
+              e.stopPropagation();
+              languageDropdown.classList.toggle('show');
+            });
+            
+            // 点击其他区域关闭下拉菜单
+            document.addEventListener('click', function() {
+              if (languageDropdown.classList.contains('show')) {
+                languageDropdown.classList.remove('show');
+              }
+            });
+            
+            // 防止下拉菜单内部点击事件冒泡
+            languageDropdown.addEventListener('click', function(e) {
+              e.stopPropagation();
+            });
+            
+            // 语言选择事件
+            languageOptions.forEach(option => {
+              option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                switchAboutLanguage(lang);
+                languageDropdown.classList.remove('show');
+              });
+            });
+          }
+        }
+        
+        // 初始化页面
+        updateAboutPageContent(currentLanguage);
+        initAboutLanguageSwitcher();
+      });
+    </script>
+  </body>
+</html>

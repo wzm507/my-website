@@ -1919,7 +1919,6 @@
         const languageButton = document.querySelector('.language-button');
         const languageDropdown = document.querySelector('.language-dropdown');
         const languageOptions = document.querySelectorAll('.language-option');
-        const currentLanguage = window.currentLanguage || 'en';
         
         // 定义各语言的翻译内容
         const translations = {
@@ -1938,7 +1937,8 @@
               developer: 'Developer',
               area: 'Area',
               handoverDate: 'Handover Date'
-            }
+            },
+            viewPropertiesButton: 'Properties'
           },
           zh: {
             sectionTitle: '精选房产',
@@ -1978,11 +1978,8 @@
           }
         };
         
-        // 设置初始按钮文本
-        updateButtonText(currentLanguage);
-        
-        // 初始化页面语言
-        updatePageLanguage(currentLanguage);
+        // 初始化语言设置
+        initLanguageSettings();
         
         // 切换下拉菜单显示/隐藏
         languageButton.addEventListener('click', function(e) {
@@ -2006,7 +2003,11 @@
         languageOptions.forEach(option => {
           option.addEventListener('click', function() {
             const lang = this.getAttribute('data-lang');
-            // 更新当前语言
+            
+            // 保存语言偏好到localStorage
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // 更新全局语言变量
             if (window.updateCurrentLanguage) {
               window.updateCurrentLanguage(lang);
             } else {
@@ -2032,6 +2033,25 @@
             'ar': 'ع'
           };
           languageButton.textContent = langMap[lang] || 'EN';
+        }
+        
+        // 初始化语言设置
+        function initLanguageSettings() {
+          // 从localStorage获取用户偏好的语言
+          const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+          
+          // 更新页面语言
+          updatePageLanguage(savedLang);
+          
+          // 更新按钮显示
+          updateButtonText(savedLang);
+          
+          // 更新全局语言变量
+          if (window.updateCurrentLanguage) {
+            window.updateCurrentLanguage(savedLang);
+          } else {
+            window.currentLanguage = savedLang;
+          }
         }
         
         // 更新页面语言的函数
@@ -2071,18 +2091,42 @@
             // 更新房产卡片中的静态文本
             const metaItems = document.querySelectorAll('.property-meta .meta-item');
             metaItems.forEach(item => {
-              const text = item.textContent.trim();
-              // 匹配开发商标签并替换（移除^锚点，允许在任何位置匹配）
-              if (text.includes('Developer:') || text.includes('开发商:') || text.includes('المطور:')) {
-                item.innerHTML = item.innerHTML.replace(/(Developer:|开发商:|المطور:)/, translationsObj.propertyMeta.developer + ':');
-              } 
-              // 匹配区域标签并替换（移除^锚点，允许在任何位置匹配）
-              else if (text.includes('Area:') || text.includes('区域:') || text.includes('المنطقة:')) {
-                item.innerHTML = item.innerHTML.replace(/(Area:|区域:|المنطقة:)/, translationsObj.propertyMeta.area + ':');
-              } 
-              // 匹配交付日期标签并替换（移除^锚点，允许在任何位置匹配）
-              else if (text.includes('Handover Date:') || text.includes('交付日期:') || text.includes('تاريخ التسليم:')) {
-                item.innerHTML = item.innerHTML.replace(/(Handover Date:|交付日期:|تاريخ التسليم:)/, translationsObj.propertyMeta.handoverDate + ':');
+              // 获取原始文本
+              const originalText = item.textContent.trim();
+              
+              // 创建一个临时变量来存储更新后的文本
+              let updatedText = originalText;
+              
+              // 检查并替换Developer标签
+              if (originalText.includes('Developer:')) {
+                updatedText = updatedText.replace('Developer:', translationsObj.propertyMeta.developer + ':');
+              } else if (originalText.includes('开发商:')) {
+                updatedText = updatedText.replace('开发商:', translationsObj.propertyMeta.developer + ':');
+              } else if (originalText.includes('المطور:')) {
+                updatedText = updatedText.replace('المطور:', translationsObj.propertyMeta.developer + ':');
+              }
+              
+              // 检查并替换Area标签
+              if (originalText.includes('Area:')) {
+                updatedText = updatedText.replace('Area:', translationsObj.propertyMeta.area + ':');
+              } else if (originalText.includes('区域:')) {
+                updatedText = updatedText.replace('区域:', translationsObj.propertyMeta.area + ':');
+              } else if (originalText.includes('المنطقة:')) {
+                updatedText = updatedText.replace('المنطقة:', translationsObj.propertyMeta.area + ':');
+              }
+              
+              // 检查并替换Handover Date标签
+              if (originalText.includes('Handover Date:')) {
+                updatedText = updatedText.replace('Handover Date:', translationsObj.propertyMeta.handoverDate + ':');
+              } else if (originalText.includes('交付日期:')) {
+                updatedText = updatedText.replace('交付日期:', translationsObj.propertyMeta.handoverDate + ':');
+              } else if (originalText.includes('تاريخ التسليم:')) {
+                updatedText = updatedText.replace('تاريخ التسليم:', translationsObj.propertyMeta.handoverDate + ':');
+              }
+              
+              // 如果文本有变化，更新整个元素的文本内容
+              if (updatedText !== originalText) {
+                item.textContent = updatedText;
               }
             });
             
@@ -2105,3 +2149,4 @@
         }
       });
     </script>
+    <script type="module" src="/src/main.js"></script>

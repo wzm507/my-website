@@ -1853,11 +1853,11 @@ document.addEventListener('DOMContentLoaded', () => {
         <span class="logo-text logo-text-mobile">HOUSE</span>
       </div>
       
-      <!-- 汉堡菜单按钮 -->
-      <button class="menu-toggle" id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
+      <!-- 汉堡菜单按钮 - 确保可点击 -->
+      <button class="menu-toggle" id="menu-toggle" style="display:none; position:relative; z-index:1001; cursor:pointer; background:none; border:none; padding:10px; width:40px; height:40px;">
+        <span style="display:block; width:20px; height:2px; background-color:#333; margin:3px auto;"></span>
+        <span style="display:block; width:20px; height:2px; background-color:#333; margin:3px auto;"></span>
+        <span style="display:block; width:20px; height:2px; background-color:#333; margin:3px auto;"></span>
       </button>
       
       <!-- 桌面版导航链接 -->
@@ -1904,91 +1904,122 @@ document.addEventListener('DOMContentLoaded', () => {
       
       <!-- 汉堡菜单交互脚本 -->
       <script>
-        // 汉堡菜单切换功能 - 优化版
+        // 简单直接的汉堡菜单实现
         document.addEventListener('DOMContentLoaded', function() {
           // 获取元素
           const menuToggle = document.getElementById('menu-toggle');
           const mobileMenu = document.getElementById('mobile-menu');
           
-          // 确保元素存在
-          if (menuToggle && mobileMenu) {
-            // 添加触摸反馈和动画效果样式
-            mobileMenu.style.transition = 'opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease';
-            mobileMenu.style.opacity = '0';
-            mobileMenu.style.transform = 'translateY(-10px)';
-            mobileMenu.style.maxHeight = '0';
-            mobileMenu.style.overflow = 'hidden';
-            
-            // 点击汉堡菜单按钮
-            menuToggle.addEventListener('click', function(event) {
-              // 切换活动状态类
-              menuToggle.classList.toggle('active');
-              const isActive = menuToggle.classList.contains('active');
-              
-              if (isActive) {
-                // 显示菜单 - 添加动画效果
-                mobileMenu.classList.add('active');
-                setTimeout(() => {
-                  mobileMenu.style.opacity = '1';
-                  mobileMenu.style.transform = 'translateY(0)';
-                  mobileMenu.style.maxHeight = '500px'; // 设置一个足够大的值
-                }, 10); // 小延迟确保CSS转换正确应用
-              } else {
-                // 隐藏菜单 - 添加动画效果
-                mobileMenu.style.opacity = '0';
-                mobileMenu.style.transform = 'translateY(-10px)';
-                mobileMenu.style.maxHeight = '0';
-                setTimeout(() => {
-                  mobileMenu.classList.remove('active');
-                }, 300); // 与过渡时间匹配
-              }
-              
-              // 阻止事件冒泡到文档
-              event.stopPropagation();
-            });
-            
-            // 触摸设备优化 - 添加触摸事件支持
-            menuToggle.addEventListener('touchstart', function(event) {
-              // 防止触摸事件触发鼠标事件
-              event.preventDefault();
-              // 触发点击事件
-              this.click();
-            });
+          // 调试对象
+          window.menuDebug = {
+            initialized: true,
+            toggleCount: 0,
+            menuVisible: false
+          };
+          
+          console.log('[Mobile Menu] 初始化');
+          
+          // 函数：根据窗口大小更新菜单按钮显示状态
+          function updateMenuToggleVisibility() {
+            if (window.innerWidth <= 768) {
+              menuToggle.style.display = 'block';
+            } else {
+              menuToggle.style.display = 'none';
+            }
           }
           
-          // 移动端点击菜单外区域关闭菜单
-          document.addEventListener('click', function(event) {
-            // 确保元素存在且点击目标不是菜单或按钮
-            if (mobileMenu && mobileMenu.classList.contains('active') && 
-                menuToggle && !menuToggle.contains(event.target) && 
-                !mobileMenu.contains(event.target)) {
-              // 关闭菜单 - 添加动画效果
-              menuToggle.classList.remove('active');
-              mobileMenu.style.opacity = '0';
-              mobileMenu.style.transform = 'translateY(-10px)';
-              mobileMenu.style.maxHeight = '0';
-              setTimeout(() => {
-                mobileMenu.classList.remove('active');
-              }, 300); // 与过渡时间匹配
+          if (menuToggle && mobileMenu) {
+            // 设置基础样式 - 确保菜单默认隐藏
+            mobileMenu.style.display = 'none';
+            mobileMenu.style.position = 'fixed';
+            mobileMenu.style.top = '60px';
+            mobileMenu.style.left = '0';
+            mobileMenu.style.width = '100%';
+            mobileMenu.style.zIndex = '999';
+            mobileMenu.style.backgroundColor = 'white';
+            mobileMenu.style.padding = '1rem';
+            mobileMenu.style.boxShadow = '0 4px 10px rgba(0,0,0,0.1)';
+            mobileMenu.style.flexDirection = 'column';
+            mobileMenu.style.gap = '1rem';
+            
+            // 初始化时更新按钮显示状态
+            updateMenuToggleVisibility();
+            
+            // 菜单切换函数
+            function toggleMenu() {
+              window.menuDebug.toggleCount++;
+              console.log('[Mobile Menu] 切换菜单:', window.menuDebug.toggleCount);
+              
+              if (mobileMenu.style.display === 'flex') {
+                // 关闭菜单
+                mobileMenu.style.display = 'none';
+                menuToggle.classList.remove('active');
+                window.menuDebug.menuVisible = false;
+                console.log('[Mobile Menu] 菜单已关闭');
+              } else {
+                // 打开菜单
+                mobileMenu.style.display = 'flex';
+                menuToggle.classList.add('active');
+                window.menuDebug.menuVisible = true;
+                console.log('[Mobile Menu] 菜单已打开');
+              }
             }
-          });
-          
-          // 触摸设备优化 - 点击菜单外区域关闭菜单
-          document.addEventListener('touchstart', function(event) {
-            // 确保元素存在且点击目标不是菜单或按钮
-            if (mobileMenu && mobileMenu.classList.contains('active') && 
-                menuToggle && !menuToggle.contains(event.target) && 
-                !mobileMenu.contains(event.target)) {
-              // 关闭菜单 - 添加动画效果
-              menuToggle.classList.remove('active');
-              mobileMenu.style.opacity = '0';
-              mobileMenu.style.transform = 'translateY(-10px)';
-              mobileMenu.style.maxHeight = '0';
-              setTimeout(() => {
-                mobileMenu.classList.remove('active');
-              }, 300); // 与过渡时间匹配
+            
+            // 直接绑定简单事件处理
+            menuToggle.onclick = function() {
+              toggleMenu();
+            };
+            
+            // 移动端触摸事件
+            menuToggle.ontouchend = function(e) {
+              e.preventDefault(); // 防止触发额外点击
+              toggleMenu();
+            };
+            
+            // 点击外部关闭菜单
+            document.addEventListener('click', function(e) {
+              if (mobileMenu.style.display === 'flex' && 
+                  !menuToggle.contains(e.target) && 
+                  !mobileMenu.contains(e.target)) {
+                mobileMenu.style.display = 'none';
+                menuToggle.classList.remove('active');
+                window.menuDebug.menuVisible = false;
+              }
+            });
+            
+            // 窗口大小变化时更新菜单和按钮显示状态
+            window.addEventListener('resize', function() {
+              updateMenuToggleVisibility();
+              
+              if (window.innerWidth > 768) {
+                mobileMenu.style.display = 'none';
+                menuToggle.classList.remove('active');
+                window.menuDebug.menuVisible = false;
+              }
+            });
+          }
+        });
+              
+              // 确保移动设备上菜单按钮可见
+              function updateMenuVisibility() {
+                if (window.innerWidth <= 768) {
+                  newMenuToggle.style.display = 'block';
+                } else {
+                  newMenuToggle.style.display = 'none';
+                  mobileMenu.style.display = 'none'; // 桌面端始终隐藏
+                }
+              }
+              
+              // 初始化和窗口调整事件
+              updateMenuVisibility();
+              window.addEventListener('resize', updateMenuVisibility);
+              
+              // 为调试添加辅助功能
+              window.toggleMobileMenu = toggleMenu;
+              console.log('Mobile menu system ready');
             }
-          });
+          }, 500); // 延迟初始化，确保DOM完全加载
+        })();
           
           // 移动端语言选择器功能
           const langButtonMobile = document.getElementById('language-button-mobile');

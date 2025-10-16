@@ -50,9 +50,7 @@ export const globalTranslations = {
     footerCookiePolicy: 'Cookie Policy',
     footerTagline: 'Premium real estate platform in Dubai and UAE',
     footerFollowUs: 'Follow Us',
-    salePrice: 'SALE PRICE',  // 添加SALE PRICE翻译键
-    readMore: 'Read more',  // 添加Read more翻译键
-    modalTitle: 'News Details',
+    salePrice: 'SALE PRICE',  // 添加SALE PRICE翻译�?    readMore: 'Read more',  // 添加Read more翻译�?    modalTitle: 'News Details',
     modalClose: 'Close',
     modalContent: '',
     modalContentMore: '',
@@ -88,7 +86,7 @@ export const globalTranslations = {
       
       <div style="margin-bottom: 25px;">
         <h4 style="color: #333; margin-bottom: 15px; font-size: 1.2rem;">Project Highlights</h4>
-        <p>School just steps away (less than 100 meters) • Five-star Palace Hotel Residence • Strong developer backing • Prime opportunity for Golden Visa • Rare opportunity - next school district property chance in 10 years</p>
+        <p>School just steps away (less than 100 meters) �?Five-star Palace Hotel Residence �?Strong developer backing �?Prime opportunity for Golden Visa �?Rare opportunity - next school district property chance in 10 years</p>
       </div>
       
       <div style="margin-bottom: 25px;">
@@ -115,7 +113,7 @@ export const globalTranslations = {
       
       <div style="margin-bottom: 25px;">
         <h4 style="color: #333; margin-bottom: 15px; font-size: 1.2rem;">World-Class Design Collaboration, Seamless Integration with Nature</h4>
-        <p>To create a residential masterpiece worthy of this prime location, SOLAYA enlisted the expertise of globally renowned design teams — Foster + Partners and 1508 London. With "architecture blending with nature" as their core philosophy, the two teams ensured the project harmoniously complements its surroundings including beaches, sea views, and urban landscapes.</p>
+        <p>To create a residential masterpiece worthy of this prime location, SOLAYA enlisted the expertise of globally renowned design teams �?Foster + Partners and 1508 London. With "architecture blending with nature" as their core philosophy, the two teams ensured the project harmoniously complements its surroundings including beaches, sea views, and urban landscapes.</p>
       </div>
       
       <div style="margin-bottom: 25px;">
@@ -159,16 +157,16 @@ export const globalTranslations = {
     heroTitle: '寻找您的梦想',
     heroSubtitle: '迪拜和阿联酋的高端房地产平台',
     propertiesTitle: '探索我们的房产',
-    propertiesSubtitle: '发现各种高端房产',
-    viewFeaturedProperties: '查看精选房产',
+      propertiesSubtitle: '发现各种高端房产',
+      viewFeaturedProperties: '查看精选房产',
     learnMore: '了解更多',
     latestNews: '最新资讯',
     newsSubtitle: '了解房地产市场的最新趋势和见解',
     viewAllNews: '查看全部资讯',
-    missionTitle: '我们的使命是重新定义房地产，以客户为先。',
-    missionSubtitle: '我们致力于为客户提供卓越的房地产体验',
-    specialistConnect: '联系专业顾问',
-    expertAssistance: '专业房地产协助',
+    missionTitle: '我们的使命是重新定义房地产，以客户为先',
+      missionSubtitle: '我们致力于为客户提供卓越的房地产体验',
+      specialistConnect: '联系专业顾问',
+      expertAssistance: '专业房地产协助',
     expertAssistanceDesc: '我们拥有超过400名专业顾问随时为您提供帮助。我们经验丰富的房地产专家团队可为您的所有房产需求提供个性化协助，从咨询到成交。',
     listProperty: '发布您的房产',
     marketingSolutions: '专业营销解决方案',
@@ -182,11 +180,11 @@ export const globalTranslations = {
     newsTitle1: 'Lyvia By Palace将于2025年10月13日盛大开盘',
     newsTitle2: 'SOLAYA：迪拜La Mer海滩全新豪华住宅，融合一线海景与都市活力',
     newsTitle3: '报告分析：阿联酋房地产成为经济增长核心驱动力',
-    newsDesc1: 'Lyvia By Palace将于2025年10月13日下午5点盛大开盘，预计2029年交付。项目位于黄金地段，毗邻即将完工的Cloud Tower，即将开通的地铁线路，以及优质学校、购物中心和商业建筑。无论是投资还是自住，Lyvia By Palace都是绝佳选择。',
+    newsDesc1: 'Lyvia By Palace将于2025年10月13日下午3点盛大开盘，预计2029年交付。项目位于黄金地段，毗邻即将完工的Cloud Tower，即将开通的地铁线路，以及优质学校、购物中心和商业建筑。无论是投资还是自住，Lyvia By Palace都是绝佳选择。',
     newsDesc2: '在迪拜高端房地产市场，拥有核心位置的一线海景豪华物业一直极为稀缺。现在，朱美拉黄金海岸的La Mer海滩迎来了全新豪华住宅项目——SOLAYA。',
-    newsDesc3: '在全球经济挑战背景下，阿联酋凭借其独特的地理优势和稳定的投资环境，继续巩固其中东地区"投资避风港"的地位。最新报告显示，房地产行业已成为推动阿联酋经济增长的关键引擎。',
+    newsDesc3: '在全球经济挑战背景下，阿联酋凭借其独特的地理优势和稳定的投资环境，继续巩固其中东地区投资避风港的地位。最新报告显示，房地产行业已成为推动阿联酋经济增长的关键引擎。',
       footerQuickLinks: '快速链接',
-    footerHome: '首页',
+      footerHome: '首页',
     footerProperties: '房产',
     footerAboutUs: '关于我们',
     footerContact: '联系我们',
@@ -201,16 +199,14 @@ export const globalTranslations = {
     footerTagline: '迪拜和阿联酋的高端房地产平台',
     footerContactUs: '联系我们',
     footerFollowUs: '关注我们',
-    salePrice: '售价',  // 添加SALE PRICE的中文翻译
-    readMore: '查看更多',  // 添加Read more的中文翻译
-    modalTitle: '新闻详情',
+    salePrice: '售价',  // 添加SALE PRICE的中文翻�?    readMore: '查看更多',  // 添加Read more的中文翻�?    modalTitle: '新闻详情',
     modalClose: '关闭',
     modalContent: '',
     modalContentMore: '',
     contactTitle: '联系我们',
     contactSubtitle: '有问题？联系我们的团队获取帮助。',
     companyIntroTitle: '发现您的开发机会的新方式',
-    companyIntroDesc: '发现您的下一个开发项目，我们列出了10多个机会和专业服务。',
+    companyIntroDesc: '发现您的下一个开发项目，我们列出了40多个机会和专业服务。',
     companyStatAgents: '顾问',
     companyStatListings: '房源',
     companyStatCountries: '国家',
@@ -222,9 +218,9 @@ export const globalTranslations = {
     footerEmail: 'Info@hawsonhouse.com',
     footerPhone: '+971 506956105',
     footerAddress: '迪拜码头，迪拜',
-    propertyMontiva: '蒙蒂瓦·维达',
+    propertyMontiva: '蒙蒂瓦·维拉',
     propertyPalace: '皇宫别墅奥斯特拉',
-    propertyRosehill: '玫瑰山',
+    propertyRosehill: '玫瑰山别墅',
     propertyGolf: '高尔夫山',
     propertyTypeApartment: '公寓',
     propertyTypeVilla: '别墅',
@@ -233,18 +229,18 @@ export const globalTranslations = {
     // 弹窗内容
     lyviaModalContent: `
       <div style="margin-bottom: 25px;">
-        <h4 style="color: #333; margin-bottom: 15px; font-size: 1.2rem;">项目开盘信息</h4>
-        <p>Lyvia By Palace将于2025年10月13日下午5:00盛大开盘，预计2029年交付。该项目正处于显著增长机遇的门槛上，恰逢Creek Tower完工、蓝线地铁开通、知名学校启用、购物中心建设启动以及主要办公综合体和企业入驻。这些汇聚的基础设施发展标志着房产价值升值的绝佳时机。无论是投资还是自住，Lyvia By Palace都是理想选择。</p>
+        <h4 style="color: #333; margin-bottom: 15px; font-size: 1.2rem;">项目开盘信�?/h4>
+        <p>Lyvia By Palace将于2025�?0�?3日下�?:00盛大开盘，预计2029年交付。该项目正处于显著增长机遇的门槛上，恰逢Creek Tower完工、蓝线地铁开通、知名学校启用、购物中心建设启动以及主要办公综合体和企业入驻。这些汇聚的基础设施发展标志着房产价值升值的绝佳时机。无论是投资还是自住，Lyvia By Palace都是理想选择�?/p>
       </div>
       
       <div style="margin-bottom: 25px;">
         <h4 style="color: #333; margin-bottom: 15px; font-size: 1.2rem;">项目亮点</h4>
-        <p>学校近在咫尺（不到100米）• 五星级Palace酒店公寓 • 强大开发商支持 • 黄金签证绝佳机会 • 罕见机会 - 十年内下一个学区房机会</p>
+        <p>学校近在咫尺（不�?00米）�?五星级Palace酒店公寓 �?强大开发商支持 �?黄金签证绝佳机会 �?罕见机会 - 十年内下一个学区房机会</p>
       </div>
       
       <div style="margin-bottom: 25px;">
-        <h4 style="color: #333; margin-bottom: 15px; font-size: 1.2rem;">Creek Harbour的"零通勤"家庭奢华住宅</h4>
-        <p>Creek Harbour的中心城区政府定位和配套商业区（配有塔楼、商场和办公楼）推动了房产价格的高增长和抗通胀属性。结合学区房的高流动性和高租金收益率的快速变现属性，加上五星级Palace酒店品牌提升，租金和转售价格比普通建筑高出20%，使其成为年度最佳住宅投资项目。</p>
+        <h4 style="color: #333; margin-bottom: 15px; font-size: 1.2rem;">Creek Harbour"零通勤"家庭奢华住宅</h4>
+        <p>Creek Harbour的中心城区政府定位和配套商业区（配有塔楼、商场和办公楼）推动了房产价格的高增长和抗通胀属性。结合学区房的高流动性和高租金收益率的快速变现属性，加上五星级Palace酒店品牌提升，租金和转售价格比普通建筑高30%，使其成为年度最佳住宅投资项目。</p>
       </div>
       
       <div style="margin-bottom: 25px;">
@@ -260,27 +256,27 @@ export const globalTranslations = {
     
     solayaModalContent: `
       <div style="margin-bottom: 25px;">
-        <h4 style="color: #333; margin-bottom: 15px; font-size: 1.2rem;">黄金海滩位置，独家234套奢华住宅</h4>
+        <h4 style="color: #333; margin-bottom: 15px; font-size: 1.2rem;">黄金海滩位置，独有234套奢华住宅</h4>
         <p>SOLAYA战略性地位于迪拜著名的朱美拉黄金海岸线，提供不可替代的海滩位置。从每个窗户，居民都能欣赏到壮丽的阿拉伯湾和标志性的迪拜天际线的全景，将海景生活的梦想变为现实。与典型的住宅开发不同，SOLAYA仅有234套精心打造的私人奢华住宅，每个空间都经过深思熟虑的设计，散发出低调的优雅和精致。</p>
       </div>
       
       <div style="margin-bottom: 25px;">
         <h4 style="color: #333; margin-bottom: 15px; font-size: 1.2rem;">世界级设计合作，与自然无缝融合</h4>
-        <p>为了打造配得上这一稀缺位置的住宅杰作，SOLAYA邀请了全球知名设计团队——Foster + Partners和1508 London的专业知识。以"建筑与自然融合"为核心理念，两个团队确保项目和谐地与周边环境（包括海滩、海景和城市景观）相得益彰。</p>
+        <p>为了打造配得上这一稀缺位置的住宅杰作，SOLAYA邀请了全球知名设计团队——Foster + Partners和508 London的专业知识。以"建筑与自然融合"为核心理念，两个团队确保项目和谐地与周边环境（包括海滩、海景和城市景观）相得益彰。</p>
       </div>
       
       <div style="margin-bottom: 25px;">
-        <h4 style="color: #333; margin-bottom: 15px; font-size: 1.2rem;">多维度优势，定义新奢华标准</h4>
-        <p>由于在开发商声誉、位置、交通、设施和市场潜力方面的卓越优势，SOLAYA已成为迪拜最受关注的海滩奢华项目之一，全面满足居住和投资需求。</p>
+        <h4 style="color: #333; margin-bottom: 15px; font-size: 1.2rem;">多维度优势，定义新奢华标�?/h4>
+        <p>由于在开发商声誉、位置、交通、设施和市场潜力方面的卓越优势，SOLAYA已成为迪拜最受关注的海滩奢华项目之一，全面满足居住和投资需求�?/p>
         
         <div style="margin-top: 10px;">
-          <p><strong>优势1：强大开发商支持，显著投资潜力</strong></p>
-          <p>SOLAYA由迪拜控股公司开发，迪拜控股是迪拜酋长国最大的房地产开发商之一。</p>
+          <p><strong>优势1：强大开发商支持，显著投资潜�?/strong></p>
+          <p>SOLAYA由迪拜控股公司开发，迪拜控股是迪拜酋长国最大的房地产开发商之一�?/p>
         </div>
         
         <div style="margin-top: 10px;">
-          <p><strong>优势2：世界级海滩目的地，充满活力的生活方式</strong></p>
-          <p>项目位于La Mer海滩，这是朱美拉1区的世界级海岸目的地，由著名的Meraas开发。</p>
+          <p><strong>优势2：世界级海滩目的地，充满活力的生活方�?/strong></p>
+          <p>项目位于La Mer海滩，这是朱美拉1区的世界级海岸目的地，由著名的Meraas开发�?/p>
         </div>
       </div>
     `,
@@ -295,12 +291,12 @@ export const globalTranslations = {
         <h4 style="color: #333; margin-bottom: 15px; font-size: 1.2rem;">01 期房市场成主力，双市齐发力</h4>
         <p>仲量联行（JLL）最新统计数据显示，2025 年上半年，阿联酋两大核心城市 —— 迪拜与阿布扎比的期房销售市场迎来爆发式增长，交易数据再创新高。</p>
         <p>迪拜：第二季度期房销售额达到 1537 亿迪拉姆，与去年同期相比增幅高达 44.5%，刷新历史纪录，展现出极强的市场吸引力。</p>
-        <p>阿布扎比：同期期房平均售价上涨 12.1%，高端及中高端住宅项目持续受到市场青睐，成为拉动区域期房市场的重要力量。</p>
+        <p>阿布扎比：同期期房平均售价上涨12.1%，高端及中高端住宅项目持续受到市场青睐，成为拉动区域期房市场的重要力量。</p>
       </div>
       
       <div style="margin-bottom: 25px;">
         <h4 style="color: #333; margin-bottom: 15px; font-size: 1.2rem;">02 租赁市场稳健，续租需求凸显稳定性</h4>
-        <p>除了期房市场的火热，阿联酋租赁市场同样表现稳健，需求端持续发力。阿布扎比第二季度租赁合同数量同比增长 9.4%，租赁市场规模稳步扩大；迪拜住宅租赁总额同比上升 11.5%，市场交易活跃度不断提升。</p>
+        <p>除了期房市场的火热，阿联酋租赁市场同样表现稳健，需求端持续发力。阿布扎比第二季度租赁合同数量同比增加9.4%，租赁市场规模稳步扩大；迪拜住宅租赁总额同比上升 11.5%，市场交易活跃度不断提升。</p>
       </div>
     `,
     
@@ -352,9 +348,7 @@ export const globalTranslations = {
     footerPropertyManagement: 'إدارة العقارات',
     footerContactUs: 'اتصل بنا',
     footerFollowUs: 'تابعنا',
-    salePrice: 'سعر البيع',  // 添加SALE PRICE的阿拉伯语翻译
-    readMore: 'اقرأ المزيد',  // 添加Read more的阿拉伯语翻译
-    modalTitle: 'تفاصيل الأخبار',
+    salePrice: 'سعر البيع',  // 添加SALE PRICE的阿拉伯语翻译    readMore: 'اقرأ المزيد',  // 添加Read more的阿拉伯语翻译    modalTitle: 'تفاصيل الأخبار',
     modalClose: 'إغلاق',
     modalContent: '',
     modalContentMore: '',
@@ -383,21 +377,15 @@ export const globalTranslations = {
   }
 };
 
-// 获取当前语言（全局变量）
-let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+// 获取当前语言（全局变量�?let currentLang = localStorage.getItem('preferredLanguage') || 'en';
 
-// 将globalTranslations暴露到全局作用域
-window.globalTranslations = globalTranslations;
+// 将globalTranslations暴露到全局作用�?window.globalTranslations = globalTranslations;
 
-// 将updateTranslatedElements函数暴露到全局作用域
-window.updateTranslatedElements = updateTranslatedElements;
+// 将updateTranslatedElements函数暴露到全局作用�?window.updateTranslatedElements = updateTranslatedElements;
 
-// 将currentLang暴露到全局作用域
-window.currentLang = currentLang;
+// 将currentLang暴露到全局作用�?window.currentLang = currentLang;
 
-// 更新房产价格标签的函数
-// 根据用户要求，现在此函数为空，不再显示价格标签
-function updatePropertyPriceLabels() {
+// 更新房产价格标签的函�?// 根据用户要求，现在此函数为空，不再显示价格标�?function updatePropertyPriceLabels() {
   // 查找并移除所有现有的价格标签
   const priceLabels = document.querySelectorAll('.price-label');
   priceLabels.forEach(label => {
@@ -405,8 +393,7 @@ function updatePropertyPriceLabels() {
   });
 }
 
-// 更新翻译元素的函数
-  function updateTranslatedElements() {
+// 更新翻译元素的函�?  function updateTranslatedElements() {
     // 确保currentLang是最新的
     currentLang = localStorage.getItem('preferredLanguage') || currentLang || 'en';
     
@@ -430,36 +417,28 @@ function updatePropertyPriceLabels() {
       }
     });
     
-    // 导航栏文本现在通过data-translate属性自动更新，不再需要手动设置
-    
-    // Hero区域文本现在通过data-translate属性自动更新，不再需要手动设置
-    
-    // 按钮文本现在通过data-translate属性自动更新，不再需要手动设置
-    
+    // 导航栏文本现在通过data-translate属性自动更新，不再需要手动设�?    
+    // Hero区域文本现在通过data-translate属性自动更新，不再需要手动设�?    
+    // 按钮文本现在通过data-translate属性自动更新，不再需要手动设�?    
     // 特别处理房产价格标签
     updatePropertyPriceLabels();
   }
 
-// 初始化应用
-document.addEventListener('DOMContentLoaded', () => {
+// 初始化应�?document.addEventListener('DOMContentLoaded', () => {
   // 首先从localStorage读取最新的语言设置并更新全局变量
   currentLang = localStorage.getItem('preferredLanguage') || 'en';
   
-  // 检测是否为独立页面（如featured-properties.html）
-  const isStandalonePage = window.location.pathname.includes('featured-properties.html') || 
+  // 检测是否为独立页面（如featured-properties.html）  const isStandalonePage = window.location.pathname.includes('featured-properties.html') || 
                           window.location.pathname.includes('about.html') || 
                           window.location.pathname.includes('all-news.html');
   
-  // 对于独立页面，我们只需要翻译功能
-  if (isStandalonePage) {
-    // 确保翻译功能初始化
-    if (typeof initLanguageSwitcher === 'function') {
+  // 对于独立页面，我们只需要翻译功能  if (isStandalonePage) {
+    // 确保翻译功能初始化    if (typeof initLanguageSwitcher === 'function') {
       initLanguageSwitcher();
     }
     updateTranslatedElements();
     
-    // 提前返回，避免执行需要主页DOM结构的代码
-    return;
+    // 提前返回，避免执行需要主页DOM结构的代码    return;
   }
   
   // 对于主页，先应用保存的语言设置
@@ -486,7 +465,7 @@ document.addEventListener('DOMContentLoaded', () => {
       will-change: scroll-position; /* 优化滚动性能 */
     }
     
-    /* 增强导航栏质感 - 性能优化版 */
+    /* 增强导航栏质感- 性能优化 */
     .navbar {
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
       background-color: rgba(255, 255, 255, 0.98);
@@ -503,7 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     }
     
-    /* 增强按钮质感 - 性能优化版 */
+    /* 增强按钮质感 - 性能优化 */
     button {
       transition: transform 0.2s ease, background-color 0.2s ease; /* 仅过渡关键属性 */
       border-radius: 8px;
@@ -570,7 +549,7 @@ document.addEventListener('DOMContentLoaded', () => {
       box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(108, 117, 125, 0.1);
     }
     
-    /* 增强标题和文本 */
+    /* 增强标题和文�?*/
     h1, h2, h3, h4, h5, h6 {
       font-weight: 600;
       letter-spacing: -0.025em;
@@ -603,28 +582,28 @@ document.addEventListener('DOMContentLoaded', () => {
       overflow: hidden;
     }
     
-    /* 第一个统计卡片悬停效果 */
+    /* 第一个统计卡片悬停效�?*/
     .company-stat:nth-child(1):hover {
       background-image: url('/images_new/KP/1.jpg');
       background-size: cover;
       background-position: center;
     }
     
-    /* 第二个统计卡片悬停效果 */
+    /* 第二个统计卡片悬停效�?*/
     .company-stat:nth-child(2):hover {
       background-image: url('/images_new/KP/2.jpg');
       background-size: cover;
       background-position: center;
     }
     
-    /* 第三个统计卡片悬停效果 */
+    /* 第三个统计卡片悬停效�?*/
     .company-stat:nth-child(3):hover {
       background-image: url('/images_new/KP/3.jpg');
       background-size: cover;
       background-position: center;
     }
     
-    /* 悬停时添加黑色蒙版 */
+    /* 悬停时添加黑色蒙�?*/
     .company-stat:hover::before {
       content: '';
       position: absolute;
@@ -636,7 +615,7 @@ document.addEventListener('DOMContentLoaded', () => {
       z-index: 1;
     }
     
-    /* 确保文本在蒙版上方 */
+    /* 确保文本在蒙版上�?*/
     .company-stat .stat-number,
     .company-stat .stat-label {
       position: relative;
@@ -650,7 +629,7 @@ document.addEventListener('DOMContentLoaded', () => {
       color: white;
     }
     
-    /* 响应式调整 */
+    /* 响应式调�?*/
     @media (max-width: 768px) {
       .company-stats {
         flex-direction: column;
@@ -673,24 +652,24 @@ document.addEventListener('DOMContentLoaded', () => {
       color: white;
     }
     
-    /* 增强统计卡片 - 性能优化版 */
+    /* 增强统计卡片 - 性能优化�?*/
     .stat-card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease; /* 仅过渡关键属性 */
+      transition: transform 0.2s ease, box-shadow 0.2s ease; /* 仅过渡关键属�?*/
       background-color: white;
       border-radius: 12px;
       padding: 2rem;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
       border: 1px solid rgba(0, 0, 0, 0.05);
-      will-change: transform; /* 硬件加速 */
+      will-change: transform; /* 硬件加�?*/
     }
     
-    /* 修改统计卡片中图标颜色 */
+    /* 修改统计卡片中图标颜�?*/
     .stat-icon img {
-      /* 移除复杂的filter，使用CSS变量或直接颜色 */
+      /* 移除复杂的filter，使用CSS变量或直接颜�?*/
       color: #2563eb;
     }
     
-    /* 修改统计卡片中标题文本颜色 */
+    /* 修改统计卡片中标题文本颜�?*/
     .stat-title {
       color: #2563eb;
     }
@@ -701,7 +680,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     /* 移除全局动画以提升性能 */
-    /* 注意：移除了应用于.property-card, .stat-card, h2, p的全局动画 */
+    /* 注意：移除了应用�?property-card, .stat-card, h2, p的全局动画 */
     
     /* 增强英雄区域 */
       .hero-content {
@@ -717,7 +696,7 @@ document.addEventListener('DOMContentLoaded', () => {
         height: 40px;
         background: rgba(100, 149, 237, 0.05); /* 简化为单一颜色 */
         z-index: -1;
-        /* 移除动画和模糊效果 */
+        /* 移除动画和模糊效�?*/
       }
     
       /* 悬浮按钮样式 */
@@ -753,19 +732,19 @@ document.addEventListener('DOMContentLoaded', () => {
         transform: translateY(-5px);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         background-color: white;
-        opacity: 0.9; /* 悬停时增加透明度 */
+        opacity: 0.9; /* 悬停时增加透明�?*/
       }
       
-      /* 确保Font Awesome图标不改变透明度 */
+      /* 确保Font Awesome图标不改变透明�?*/
       .floating-button i {
         display: flex;
         align-items: center;
         justify-content: center;
         opacity: 1; /* 确保图标完全不透明 */
-        color: white; /* 默认状态下图标颜色为白色，与深色背景形成对比 */
+        color: white; /* 默认状态下图标颜色为白色，与深色背景形成对�?*/
       }
       
-      /* 悬停时图标颜色变为蓝色 */
+      /* 悬停时图标颜色变为蓝�?*/
       .floating-button:hover i {
         color: #2563eb;
       }
@@ -1108,7 +1087,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     
-    /* 响应式设计 */
+    /* 响应式设�?*/
     @media (max-width: 576px) {
       .popup-content {
         padding: 1.5rem;
@@ -1148,8 +1127,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sendButton = document.querySelector('#send-message');
   const chatMessages = document.querySelector('#chat-messages');
   
-  // 显示弹窗函数 - 支持电话和聊天两种类型
-  function showPopup(type) {
+  // 显示弹窗函数 - 支持电话和聊天两种类�?  function showPopup(type) {
     // 使用全局的currentLang变量
     // 不需要额外的语言检测逻辑，因为全局变量已经包含了正确的语言设置
     
@@ -1179,14 +1157,12 @@ document.addEventListener('DOMContentLoaded', () => {
       popupTitle.textContent = translations[currentLang].chatTitle || 'Chat with AI Assistant';
       phoneContent.style.display = 'none';
       chatContent.style.display = 'block';
-      // 清空之前的聊天内容（保留欢迎消息）
-      const welcomeMessage = chatMessages.querySelector('.message.bot-message');
+      // 清空之前的聊天内容（保留欢迎消息�?      const welcomeMessage = chatMessages.querySelector('.message.bot-message');
       if (welcomeMessage) {
         chatMessages.innerHTML = '';
         chatMessages.appendChild(welcomeMessage);
       }
-      // 聚焦输入框
-      setTimeout(() => {
+      // 聚焦输入�?      setTimeout(() => {
         chatInput?.focus();
       }, 100);
     }
@@ -1201,8 +1177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'auto'; // 恢复背景滚动
   }
   
-  // 为关闭按钮添加点击事件
-  popupClose.addEventListener('click', hidePopup);
+  // 为关闭按钮添加点击事�?  popupClose.addEventListener('click', hidePopup);
   
   // 点击弹窗外部关闭弹窗
   popupContainer.addEventListener('click', (e) => {
@@ -1211,16 +1186,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   
-  // 为电话按钮添加点击事件
-  if (phoneButton) {
+  // 为电话按钮添加点击事�?  if (phoneButton) {
     phoneButton.addEventListener('click', (e) => {
       e.preventDefault();
       showPopup('phone');
     });
   }
   
-  // 确保Call Now按钮不调用外部软件，只在网页内显示
-  const callNowButton = document.querySelector('.call-button');
+  // 确保Call Now按钮不调用外部软件，只在网页内显�?  const callNowButton = document.querySelector('.call-button');
   if (callNowButton) {
     callNowButton.addEventListener('click', (e) => {
       e.preventDefault();
@@ -1231,8 +1204,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   
-  // 为聊天按钮添加点击事件
-  if (chatButton) {
+  // 为聊天按钮添加点击事�?  if (chatButton) {
     chatButton.addEventListener('click', () => {
       showPopup('chat');
     });
@@ -1257,8 +1229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   
-  // 添加复制成功的样式
-  const copySuccessStyle = document.createElement('style');
+  // 添加复制成功的样�?  const copySuccessStyle = document.createElement('style');
   copySuccessStyle.textContent = `
     .copy-button.copied {
       background-color: #28a745;
@@ -1269,8 +1240,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.head.appendChild(copySuccessStyle);
   
   // 添加AI聊天逻辑
-   // 读取并解析房产项目数据
-   const propertyData = [
+   // 读取并解析房产项目数�?   const propertyData = [
      {
        id: 1,
        name: 'Montiva by Vida',
@@ -1452,26 +1422,26 @@ document.addEventListener('DOMContentLoaded', () => {
     'zh': {
       'hello': '您好！欢迎来到Hawson House Properties。今天我能为您提供什么帮助？',
       'hi': '您好！我能如何帮助您满足您的房地产需求？',
-      'properties': '从我们丰富的迪拜项目组合中浏览并找到您理想的房产。在迪拜最受欢迎的地区发现各种住宅和商业房产，每个项目都有详细的信息和规格。',
+      'properties': '从我们丰富的迪拜项目组合中浏览并找到您理想的房产。在迪拜最受欢迎的地区发现各种住宅和商业房产，每个项目都有详细的信息和规格�?,
       'listings': `我们有多个优质房产列表可供选择：\n\n1. Montiva by Vida - 公寓 - 1,910,000 迪拉姆\n2. The Palace Villas Ostra - 别墅 - 13,130,000 迪拉姆\n3. Rosehill - 公寓 - 1,600,000 迪拉姆\n4. Golf Hillside - 公寓 - 2,730,000 迪拉姆\n5. Selvara - 别墅 - 6,200,000 迪拉姆\n6. Silva Dubai Creek Harbour - 公寓 - 1,790,000 迪拉姆\n7. Mamsha Palm - 公寓 - 3,700,000 迪拉姆\n8. The Beach House Fahid - 公寓 - 4,132,000 迪拉姆\n9. The Arthouse - 公寓 | 别墅 - 3,300,000 迪拉姆\n10. Cavalli Couture - 公寓 - 21,904,000 迪拉姆\n11. Damac Bay 2 - 公寓 | 复式公寓 - 7,342,000 迪拉姆\n12. Chelsea Residences - 公寓 - 2,170,000 迪拉姆\n13. Falcon Island - 别墅 | 联排别墅 - 7,800,000 迪拉姆\n14. Falcon Island - 别墅 | 联排别墅 - 1,190,000 迪拉姆\n15. DWTN Residences - 公寓 | 复式公寓 - 1,860,000 迪拉姆\n16. Ember Park Five by Deyaar - 公寓 - 704,187 迪拉姆`,
-      'contact': '您可以通过电话 +971 506956105 或电子邮件 Info@hawsonhouse.com 联系我们。我们的团队随时为您提供帮助。',
-      'email': '我们的电子邮箱是 Info@hawsonhouse.com。请随时向我们发送任何咨询或问题。',
-      'phone': '您可以在我们的工作时间内通过电话 +971 506956105 联系我们。',
-      'services': '专家房地产协助：访问我们由400多名专家代理组成的团队，随时为您提供帮助。专业营销解决方案：通过我们的专业营销策略列出您的房产，实现最优价值。市场洞察助您明智决策：下载最新的2025年第一季度综合迪拜房地产市场报告。',
-      'buy property': '我们可以帮助您找到完美的房产。我们在迪拜最受欢迎的地区拥有各种住宅和商业房产。我们的专家代理团队随时为您提供个性化的房产解决方案。',
-      'sell property': '如果您想出售房产，我们可以通过专业的营销策略和广泛的网络帮助您最大化其价值。我们提供全面的营销方法，包括专业摄影、虚拟游览和有针对性的广告活动。',
-      'rent property': '我们有各种租赁房产可供选择。您可以指定您的需求和预算，以获得更定制的选择。',
+      'contact': '您可以通过电话 +971 506956105 或电子邮�?Info@hawsonhouse.com 联系我们。我们的团队随时为您提供帮助�?,
+      'email': '我们的电子邮箱是 Info@hawsonhouse.com。请随时向我们发送任何咨询或问题�?,
+      'phone': '您可以在我们的工作时间内通过电话 +971 506956105 联系我们�?,
+      'services': '专家房地产协助：访问我们�?00多名专家代理组成的团队，随时为您提供帮助。专业营销解决方案：通过我们的专业营销策略列出您的房产，实现最优价值。市场洞察助您明智决策：下载最新的2025年第一季度综合迪拜房地产市场报告�?,
+      'buy property': '我们可以帮助您找到完美的房产。我们在迪拜最受欢迎的地区拥有各种住宅和商业房产。我们的专家代理团队随时为您提供个性化的房产解决方案�?,
+      'sell property': '如果您想出售房产，我们可以通过专业的营销策略和广泛的网络帮助您最大化其价值。我们提供全面的营销方法，包括专业摄影、虚拟游览和有针对性的广告活动�?,
+      'rent property': '我们有各种租赁房产可供选择。您可以指定您的需求和预算，以获得更定制的选择�?,
       'project': '我们在迪拜和阿联酋的不同地区提供16个令人兴奋的项目，包括Emaar、Aldar、Damac、Al Hamra Real Estate和Deyaar的项目。您想了解某个特定项目的更多信息吗？',
-      'location': '我们的房产位于各种黄金地段，包括迪拜河港、迪拜山庄、大 polo俱乐部和度假村、萨迪亚特岛、阿尔萨法、迪拜港、迪拜海事城、阿尔哈姆拉村、迪拜市中心和迪拜生产城（IMPZ）。',
-      'price': '我们的房产价格从公寓的704,187迪拉姆到豪华房产的21,904,000迪拉姆不等。我们有适合不同预算和需求的选择。',
-      'falcon island': 'Falcon Island是位于拉斯海马阿尔哈姆拉村的一个项目，提供别墅和联排别墅。价格从1,190,000迪拉姆起，预计于2024年12月交付，也有从7,800,000迪拉姆起的选择，预计于2025年1月交付。',
-      'emaar': 'Emaar是我们合作的开发商之一。他们在我们的投资组合中有多个项目，包括Montiva by Vida、The Palace Villas Ostra、Rosehill、Golf Hillside、Selvara和Silva Dubai Creek Harbour。',
-      'aldar': 'Aldar是我们合作的另一家主要开发商。他们的项目包括Mamsha Palm、The Beach House Fahid和The Arthouse。',
-      'damac': 'Damac在我们的投资组合中有Cavalli Couture、Damac Bay 2和Chelsea Residences等项目。',
-      'deyaar': 'Deyaar的项目包括DWTN Residences和Ember Park Five by Deyaar。',
-      'handover date': '我们的项目有不同的交付日期，从2024年12月到2029年12月不等。最早交付的是Falcon Island（12-2024），最晚的是多个项目，交付时间为12-2029。',
-      'dubai': '我们在迪拜提供各种房产，包括迪拜河港、迪拜山庄、迪拜港、迪拜海事城、迪拜市中心和迪拜生产城（IMPZ）等地区。',
-      'assistant': '我是一名AI助手，随时为您提供房地产咨询帮助。我可以提供关于我们房产、服务的信息，并回答您关于迪拜房地产市场的任何问题。',
+      'location': '我们的房产位于各种黄金地段，包括迪拜河港、迪拜山庄、大 polo俱乐部和度假村、萨迪亚特岛、阿尔萨法、迪拜港、迪拜海事城、阿尔哈姆拉村、迪拜市中心和迪拜生产城（IMPZ）�?,
+      'price': '我们的房产价格从公寓�?04,187迪拉姆到豪华房产�?1,904,000迪拉姆不等。我们有适合不同预算和需求的选择�?,
+      'falcon island': 'Falcon Island是位于拉斯海马阿尔哈姆拉村的一个项目，提供别墅和联排别墅。价格从1,190,000迪拉姆起，预计于2024�?2月交付，也有�?,800,000迪拉姆起的选择，预计于2025�?月交付�?,
+      'emaar': 'Emaar是我们合作的开发商之一。他们在我们的投资组合中有多个项目，包括Montiva by Vida、The Palace Villas Ostra、Rosehill、Golf Hillside、Selvara和Silva Dubai Creek Harbour�?,
+      'aldar': 'Aldar是我们合作的另一家主要开发商。他们的项目包括Mamsha Palm、The Beach House Fahid和The Arthouse�?,
+      'damac': 'Damac在我们的投资组合中有Cavalli Couture、Damac Bay 2和Chelsea Residences等项目�?,
+      'deyaar': 'Deyaar的项目包括DWTN Residences和Ember Park Five by Deyaar�?,
+      'handover date': '我们的项目有不同的交付日期，�?024�?2月到2029�?2月不等。最早交付的是Falcon Island�?2-2024），最晚的是多个项目，交付时间�?2-2029�?,
+      'dubai': '我们在迪拜提供各种房产，包括迪拜河港、迪拜山庄、迪拜港、迪拜海事城、迪拜市中心和迪拜生产城（IMPZ）等地区�?,
+      'assistant': '我是一名AI助手，随时为您提供房地产咨询帮助。我可以提供关于我们房产、服务的信息，并回答您关于迪拜房地产市场的任何问题�?,
       'general': [
         `我随时为您的房地产需求提供帮助。我们公司在迪拜最受欢迎的地区提供各种房产。`,
         `感谢您的提问。请随时向我咨询我们的房产、服务或任何其他房地产相关问题。`,
@@ -1487,7 +1457,7 @@ document.addEventListener('DOMContentLoaded', () => {
       'contact': 'يمكنك الاتصال بنا عبر الهاتف على +971 506956105 أو عبر البريد الإلكتروني على Info@hawsonhouse.com. فريقنا متوفر للمساعدة.',
       'email': 'عنوان البريد الإلكتروني لدينا هو Info@hawsonhouse.com. لا تتردد في إرسال أي استفسارات أو أسئلة لنا.',
       'phone': 'يمكنك التواصل معنا عبر الهاتف على +971 506956105 خلال ساعات عملنا.',
-      'services': 'مساعدة عقارية متخصصة: استخدم فريقنا المخصص المكون من أكثر من 400 وكيلًا متخصصًا جاهزين للمساعدة. حلول تسويقية احترافية: حقق قيمة مثلى عن طريق تسجيل عقارك باستخدام استراتيجياتنا التسويقية المتخصصة. رؤى سوق للمقررات التفكيرية المبنية على المعرفة: حمل أحدث تقرير粽 comprehensive سوق العقارات في دبي الربع الأول لعام 2025.',
+      'services': 'مساعدة عقارية متخصصة: استخدم فريقنا المخصص المكون من أكثر من 400 وكيلًا متخصصًا جاهزين للمساعدة. حلول تسويقية احترافية: حقق قيمة مثلى عن طريق تسجيل عقارك باستخدام استراتيجياتنا التسويقية المتخصصة. رؤى سوق للمقررات التفكيرية المبنية على المعرفة: حمل أحدث تقرير�?comprehensive سوق العقارات في دبي الربع الأول لعام 2025.',
       'buy property': 'يمكننا مساعدتك في العثور على عقارك المثالي. لدينا مجموعة واسعة من العقارات السكنية والتجارية عبر أهم المواقع المرجوة في دبي. فريقنا من الوكلاء المتخصصين جاهز للمساعدة مع حلول عقارية شخصية.',
       'sell property': 'إذا كنت ترغب في بيع عقارك، يمكننا مساعدتك في زيادة قيمته إلى أقصى حد باستخدام استراتيجياتنا التسويقية المتخصصة وشبكتنا الواسعة. نحن نقدم نهجًا تسويقيًا شاملاً، بما في ذلك التصوير المحترف والجولات الافتراضية والحملات الإعلانية المستهدفة.',
       'rent property': 'لدينا مجموعة متنوعة من العقارات للإيجار المتوفرة. يمكنك تحديد متطلباتك والميزانية للحصول على خيارات أكثر تخصيصًا.',
@@ -1513,51 +1483,41 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // 生成通用回复函数已被移除，现在直接从多语言FAQ对象中获取通用回复
   
-  // 添加消息到聊天界面
-  function addMessage(text, isUser) {
+  // 添加消息到聊天界�?  function addMessage(text, isUser) {
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
     
-    // 处理HTML内容（允许简单的链接）
-    const contentDiv = document.createElement('div');
+    // 处理HTML内容（允许简单的链接�?    const contentDiv = document.createElement('div');
     contentDiv.className = 'message-content';
     
     const p = document.createElement('p');
-    p.innerHTML = text; // 允许简单的HTML如链接
-    contentDiv.appendChild(p);
+    p.innerHTML = text; // 允许简单的HTML如链�?    contentDiv.appendChild(p);
     
     messageDiv.appendChild(contentDiv);
     chatMessages.appendChild(messageDiv);
     
-    // 滚动到底部
-    chatMessages.scrollTop = chatMessages.scrollHeight;
+    // 滚动到底�?    chatMessages.scrollTop = chatMessages.scrollHeight;
   }
   
   // 处理用户消息
     function handleUserMessage(message) {
       if (!message.trim()) return;
       
-      // 添加用户消息到聊天界面
-      addMessage(message, true);
+      // 添加用户消息到聊天界�?      addMessage(message, true);
       
-      // 清空输入框
-      chatInput.value = '';
+      // 清空输入�?      chatInput.value = '';
       
-      // 模拟思考延迟
-      setTimeout(() => {
-        // 寻找匹配的回答
-        const lowerMessage = message.toLowerCase();
+      // 模拟思考延�?      setTimeout(() => {
+        // 寻找匹配的回�?        const lowerMessage = message.toLowerCase();
         let response = null;
         
-        // 获取当前语言的FAQ回复，默认使用英文
-        const lang = currentLanguage || 'en';
+        // 获取当前语言的FAQ回复，默认使用英�?        const lang = currentLanguage || 'en';
         const faqLang = faqResponses[lang] || faqResponses.en;
         
         // 检查是否包含预算相关的问题，并尝试提取预算金额
         let budget = extractBudget(message);
         if (budget > 0) {
-          // 根据当前语言生成符合预算的房产推荐
-          response = generateBudgetRecommendation(budget, lang);
+          // 根据当前语言生成符合预算的房产推�?          response = generateBudgetRecommendation(budget, lang);
         }
         
         // 如果没有预算相关回复，检查常见问题关键词
@@ -1581,25 +1541,23 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
         
-        // 添加AI回复到聊天界面
-        addMessage(response, false);
+        // 添加AI回复到聊天界�?        addMessage(response, false);
       }, 500 + Math.random() * 1000); // 0.5-1.5秒的延迟
     }
     
-    // 从消息中提取预算金额，支持多种格式
-    function extractBudget(message) {
-      // 尝试匹配中文数字表述 (一百万, 一千万等)
+    // 从消息中提取预算金额，支持多种格�?    function extractBudget(message) {
+      // 尝试匹配中文数字表述 (一百万, 一千万�?
       const chineseNumberExpressions = [
         { pattern: /一百万/, value: 1000000 },
         { pattern: /一千万/, value: 10000000 },
-        { pattern: /二百万/, value: 2000000 },
-        { pattern: /三百万/, value: 3000000 },
-        { pattern: /四百万/, value: 4000000 },
-        { pattern: /五百万/, value: 5000000 },
-        { pattern: /六百万/, value: 6000000 },
-        { pattern: /七百万/, value: 7000000 },
-        { pattern: /八百万/, value: 8000000 },
-        { pattern: /九百万/, value: 9000000 }
+        { pattern: /二百�?, value: 2000000 },
+        { pattern: /三百�?, value: 3000000 },
+        { pattern: /四百�?, value: 4000000 },
+        { pattern: /五百�?, value: 5000000 },
+        { pattern: /六百�?, value: 6000000 },
+        { pattern: /七百�?, value: 7000000 },
+        { pattern: /八百�?, value: 8000000 },
+        { pattern: /九百�?, value: 9000000 }
       ];
       
       for (const expr of chineseNumberExpressions) {
@@ -1608,15 +1566,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
       
-      // 尝试匹配中文数字单位"万"
-      const chineseWanMatch = message.match(/(\d+(?:,\d{3})*)万/);
+      // 尝试匹配中文数字单位"�?
+      const chineseWanMatch = message.match(/(\d+(?:,\d{3})*)�?);
       if (chineseWanMatch) {
         const num = parseInt(chineseWanMatch[1].replace(/,/g, ''));
-        return num * 10000; // 1万 = 10000
+        return num * 10000; // 1�?= 10000
       }
       
-      // 尝试匹配标准数字格式（带逗号或不带逗号）
-      const numberMatch = message.match(/(\d{1,3}(?:,\d{3})*|\d+)/);
+      // 尝试匹配标准数字格式（带逗号或不带逗号�?      const numberMatch = message.match(/(\d{1,3}(?:,\d{3})*|\d+)/);
       if (numberMatch) {
         return parseInt(numberMatch[1].replace(/,/g, ''));
       }
@@ -1628,8 +1585,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function generateBudgetRecommendation(budget, lang) {
       // 解析房产价格并筛选符合预算的房产
       const affordableProperties = propertyData.filter(property => {
-        // 从价格字符串中提取数字
-        const price = parseInt(property.price.replace(/[^\d]/g, ''));
+        // 从价格字符串中提取数�?        const price = parseInt(property.price.replace(/[^\d]/g, ''));
         return price <= budget;
       });
       
@@ -1641,9 +1597,9 @@ document.addEventListener('DOMContentLoaded', () => {
           format: (property, index) => `${index}. ${property.name} - ${property.type} - ${property.price}\n   Developer: ${property.developer}\n   Location: ${property.area}\n   Handover: ${property.handoverDate}`
         },
         'zh': {
-          intro: `根据您 ${budget.toLocaleString()} 迪拉姆的预算，我们推荐以下房产：\n\n`,
+          intro: `根据�?${budget.toLocaleString()} 迪拉姆的预算，我们推荐以下房产：\n\n`,
           noProperties: `很抱歉，目前我们没有价格在您 ${budget.toLocaleString()} 迪拉姆预算内的房产。`,
-          format: (property, index) => `${index}. ${property.name} - ${property.type} - ${property.price}\n   开发商：${property.developer}\n   位置：${property.area}\n   交付日期：${property.handoverDate}`
+          format: (property, index) => `${index}. ${property.name} - ${property.type} - ${property.price}\n   开发商�?{property.developer}\n   位置�?{property.area}\n   交付日期�?{property.handoverDate}`
         },
         'ar': {
           intro: `استنادًا إلى ميزانيتك البالغة ${budget.toLocaleString()} درهم، إليك العقارات التي ننصح بها:\n\n`,
@@ -1667,8 +1623,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return response.trim();
     }
   
-  // 为发送按钮添加点击事件
-  if (sendButton) {
+  // 为发送按钮添加点击事�?  if (sendButton) {
     sendButton.addEventListener('click', () => {
       handleUserMessage(chatInput.value);
     });
@@ -1683,185 +1638,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   
-  // 创建导航栏
-  const header = document.createElement('header');
+  // 创建导航�?  const header = document.createElement('header');
   header.className = 'header';
   header.innerHTML = `
-    <nav class="navbar" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: relative;">
-      <div class="logo" style="display: flex; align-items: center; gap: 0.5rem;">
+    <nav class="navbar" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+      <div class="logo" style="display: flex; align-items: center;">
         <img src="/images_new/LOGO/1.png" alt="Logo" class="logo-image">
-        <!-- 标准CSS实现响应式Logo和汉堡菜单 -->
-        <style>
-            /* 基本样式 */
-            .logo-text {
-                margin-left: 1rem;
-                font-weight: bold;
-                color: #333;
-            }
-            
-            /* 桌面版样式 */
-            .logo-text-desktop {
-                display: inline;
-                font-size: 1.5rem;
-            }
-            
-            /* 移动版样式 */
-            .logo-text-mobile {
-                display: none;
-                font-size: 1.2rem;
-            }
-            
-            /* 汉堡菜单按钮样式 */
-            .menu-toggle {
-                display: none;
-                background: none;
-                border: none;
-                cursor: pointer;
-                padding: 0.5rem;
-                z-index: 1001;
-                height: 40px;
-            }
-            
-            .menu-toggle span {
-                display: block;
-                width: 25px;
-                height: 3px;
-                margin: 5px auto;
-                background-color: #333;
-                transition: all 0.3s ease;
-            }
-            
-            /* 移动端导航菜单 */
-            .mobile-menu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: white;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-                z-index: 1000;
-                padding: 1rem;
-                flex-direction: column;
-                gap: 1rem;
-                /* 基础隐藏状态样式 - 与JS动画逻辑配合 */
-                display: flex;
-                opacity: 0;
-                transform: translateY(-10px);
-                max-height: 0;
-                overflow: hidden;
-                transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
-            }
-            
-            .mobile-menu.active {
-                /* JS将处理具体显示逻辑，这里主要确保初始状态 */
-                display: flex;
-            }
-            
-            .mobile-menu a {
-                color: #333;
-                text-decoration: none;
-                font-weight: 500;
-                padding: 0.75rem 0;
-                border-bottom: 1px solid #eee;
-                transition: color 0.3s ease;
-            }
-            
-            .mobile-menu a:last-child {
-                border-bottom: none;
-            }
-            
-            /* 移动设备断点 - 标准CSS媒体查询 */
-            @media (max-width: 768px) {
-                .logo-text-desktop {
-                    display: none !important;
-                }
-                .logo-text-mobile {
-                    display: inline !important;
-                    margin: 0 !important; /* 移除所有边距 */
-                    align-self: center !important;
-                    vertical-align: middle;
-                    line-height: 40px; /* 与logo图片高度匹配 */
-                }
-                
-                /* 调整logo图片样式 - 移除负边距，确保与边缘有安全距离 */
-                .logo-image {
-                    margin-left: 0 !important; /* 移除负边距，确保安全空间 */
-                }
-                
-                /* 调整logo容器 - 确保整体布局与边缘有足够安全空间，并实现元素垂直居中对齐 */
-                .logo {
-                    margin-right: auto !important;
-                    margin-left: 0.3rem !important; /* 增加左侧安全空间 */
-                    padding-left: 0 !important;
-                    gap: 0.5rem !important; /* 恢复适当的内部元素间距 */
-                    display: flex !important;
-                    align-items: center !important;
-                    height: 100%;
-                }
-                
-                /* 显示汉堡菜单按钮，隐藏桌面导航 - 调整尺寸与logo图片匹配 */
-                .menu-toggle {
-                    display: block;
-                    padding: 0.25rem;
-                    margin-left: auto;
-                    height: 40px;
-                    width: auto;
-                    position: relative;
-                    /* 移除flex布局属性，允许span元素自然堆叠显示为三条横线 */
-                }
-                
-                /* 调整汉堡菜单线条大小以适应按钮尺寸 */
-                .menu-toggle span {
-                    width: 20px;
-                    height: 2px;
-                    margin: 3px auto;
-                }
-                
-                /* 在手机上隐藏水平导航 */
-                .nav-links.desktop-only {
-                    display: none !important;
-                }
-                
-                /* 调整导航栏内边距 - 增加左侧安全空间 */
-                .navbar {
-                    padding-left: 0.5rem !important; /* 增加左侧安全边距 */
-                    padding-right: 0.8rem !important;
-                    display: flex !important;
-                    align-items: center !important;
-                    height: 60px; /* 固定导航栏高度 */
-                }
-            }
-            
-            /* 汉堡菜单动画效果 */
-            .menu-toggle.active span:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-            
-            .menu-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .menu-toggle.active span:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
-        </style>
-        
-        <!-- 桌面版Logo文本 -->
-        <span class="logo-text logo-text-desktop">HAWSON HOUSE PROPERTIES</span>
-        
-        <!-- 移动版Logo文本 -->
-        <span class="logo-text logo-text-mobile">HOUSE</span>
+        <span style="margin-left: 1rem; font-size: 1.5rem; font-weight: bold; color: #333;">HAWSON HOUSE PROPERTIES</span>
       </div>
-      
-      <!-- 汉堡菜单按钮 -->
-      <button class="menu-toggle" id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <!-- 桌面版导航链接 -->
-      <div class="nav-links desktop-only" style="display: flex; gap: 2rem; align-items: center;">
+      <div class="nav-links" style="display: flex; gap: 2rem; align-items: center;">
         <a href="/index.html" style="color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Home</a>
         <a href="/public/featured-properties.html" style="color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Buy</a>
         <a href="#stats" style="color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Projects</a>
@@ -1870,169 +1655,19 @@ document.addEventListener('DOMContentLoaded', () => {
         
         <!-- 语言切换下拉菜单 -->
         <div class="language-selector" style="position: relative;">
-          <button id="language-button-desktop" class="language-button" style="background: none; border: none; color: #333; cursor: pointer; font-weight: 500; transition: color 0.3s ease; display: inline-block;">
-            English ▼
-          </button>
-          <div id="language-dropdown-desktop" class="language-dropdown" style="display: none; position: absolute; right: 0; top: 100%; margin-top: 0.5rem; padding: 0.5rem 0; background-color: white; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); min-width: 120px; z-index: 1000;">
+          <button id="language-button" class="language-button" style="background: none; border: none; color: #333; cursor: pointer; font-weight: 500; transition: color 0.3s ease; display: inline-block;">
+            English �?          </button>
+          <div id="language-dropdown" class="language-dropdown" style="display: none; position: absolute; right: 0; top: 100%; margin-top: 0.5rem; padding: 0.5rem 0; background-color: white; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); min-width: 120px; z-index: 1000;">
             <button class="language-option" data-lang="en" style="display: block; width: 100%; padding: 0.5rem 1rem; text-align: left; background: none; border: none; cursor: pointer; font-size: 0.9rem; transition: background-color 0.2s ease;">English</button>
             <button class="language-option" data-lang="zh" style="display: block; width: 100%; padding: 0.5rem 1rem; text-align: left; background: none; border: none; cursor: pointer; font-size: 0.9rem; transition: background-color 0.2s ease;">中文</button>
             <button class="language-option" data-lang="ar" style="display: block; width: 100%; padding: 0.5rem 1rem; text-align: left; background: none; border: none; cursor: pointer; font-size: 0.9rem; transition: background-color 0.2s ease;">العربية</button>
           </div>
         </div>
       </div>
-      
-      <!-- 移动端导航菜单 -->
-      <div class="mobile-menu" id="mobile-menu">
-        <a href="/index.html">Home</a>
-        <a href="/public/featured-properties.html">Buy</a>
-        <a href="#stats">Projects</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-        
-        <!-- 移动端语言切换 -->
-        <div class="language-selector" style="position: relative;">
-          <button id="language-button-mobile" class="language-button" style="background: none; border: none; color: #333; cursor: pointer; font-weight: 500; width: 100%; text-align: left; padding: 0.75rem 0; border-bottom: 1px solid #eee;">
-            English ▼
-          </button>
-          <div id="language-dropdown-mobile" class="language-dropdown" style="display: none; position: static; margin-top: 0.5rem; padding: 0.5rem 0; background-color: white; border-radius: 4px;">
-            <button class="language-option" data-lang="en" style="display: block; width: 100%; padding: 0.5rem 1rem; text-align: left; background: none; border: none; cursor: pointer; font-size: 0.9rem; transition: background-color 0.2s ease;">English</button>
-            <button class="language-option" data-lang="zh" style="display: block; width: 100%; padding: 0.5rem 1rem; text-align: left; background: none; border: none; cursor: pointer; font-size: 0.9rem; transition: background-color 0.2s ease;">中文</button>
-            <button class="language-option" data-lang="ar" style="display: block; width: 100%; padding: 0.5rem 1rem; text-align: left; background: none; border: none; cursor: pointer; font-size: 0.9rem; transition: background-color 0.2s ease;">العربية</button>
-          </div>
-        </div>
-      </div>
-      
-      <!-- 汉堡菜单交互脚本 -->
-      <script>
-        // 汉堡菜单切换功能 - 优化版
-        document.addEventListener('DOMContentLoaded', function() {
-          // 获取元素
-          const menuToggle = document.getElementById('menu-toggle');
-          const mobileMenu = document.getElementById('mobile-menu');
-          
-          // 确保元素存在
-          if (menuToggle && mobileMenu) {
-            // 添加触摸反馈和动画效果样式
-            mobileMenu.style.transition = 'opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease';
-            mobileMenu.style.opacity = '0';
-            mobileMenu.style.transform = 'translateY(-10px)';
-            mobileMenu.style.maxHeight = '0';
-            mobileMenu.style.overflow = 'hidden';
-            
-            // 点击汉堡菜单按钮
-            menuToggle.addEventListener('click', function(event) {
-              // 切换活动状态类
-              menuToggle.classList.toggle('active');
-              const isActive = menuToggle.classList.contains('active');
-              
-              if (isActive) {
-                // 显示菜单 - 添加动画效果
-                mobileMenu.classList.add('active');
-                setTimeout(() => {
-                  mobileMenu.style.opacity = '1';
-                  mobileMenu.style.transform = 'translateY(0)';
-                  mobileMenu.style.maxHeight = '500px'; // 设置一个足够大的值
-                }, 10); // 小延迟确保CSS转换正确应用
-              } else {
-                // 隐藏菜单 - 添加动画效果
-                mobileMenu.style.opacity = '0';
-                mobileMenu.style.transform = 'translateY(-10px)';
-                mobileMenu.style.maxHeight = '0';
-                setTimeout(() => {
-                  mobileMenu.classList.remove('active');
-                }, 300); // 与过渡时间匹配
-              }
-              
-              // 阻止事件冒泡到文档
-              event.stopPropagation();
-            });
-            
-            // 触摸设备优化 - 添加触摸事件支持
-            menuToggle.addEventListener('touchstart', function(event) {
-              // 防止触摸事件触发鼠标事件
-              event.preventDefault();
-              // 触发点击事件
-              this.click();
-            });
-          }
-          
-          // 移动端点击菜单外区域关闭菜单
-          document.addEventListener('click', function(event) {
-            // 确保元素存在且点击目标不是菜单或按钮
-            if (mobileMenu && mobileMenu.classList.contains('active') && 
-                menuToggle && !menuToggle.contains(event.target) && 
-                !mobileMenu.contains(event.target)) {
-              // 关闭菜单 - 添加动画效果
-              menuToggle.classList.remove('active');
-              mobileMenu.style.opacity = '0';
-              mobileMenu.style.transform = 'translateY(-10px)';
-              mobileMenu.style.maxHeight = '0';
-              setTimeout(() => {
-                mobileMenu.classList.remove('active');
-              }, 300); // 与过渡时间匹配
-            }
-          });
-          
-          // 触摸设备优化 - 点击菜单外区域关闭菜单
-          document.addEventListener('touchstart', function(event) {
-            // 确保元素存在且点击目标不是菜单或按钮
-            if (mobileMenu && mobileMenu.classList.contains('active') && 
-                menuToggle && !menuToggle.contains(event.target) && 
-                !mobileMenu.contains(event.target)) {
-              // 关闭菜单 - 添加动画效果
-              menuToggle.classList.remove('active');
-              mobileMenu.style.opacity = '0';
-              mobileMenu.style.transform = 'translateY(-10px)';
-              mobileMenu.style.maxHeight = '0';
-              setTimeout(() => {
-                mobileMenu.classList.remove('active');
-              }, 300); // 与过渡时间匹配
-            }
-          });
-          
-          // 移动端语言选择器功能
-          const langButtonMobile = document.getElementById('language-button-mobile');
-          const langDropdownMobile = document.getElementById('language-dropdown-mobile');
-          
-          if (langButtonMobile && langDropdownMobile) {
-            langButtonMobile.addEventListener('click', function(event) {
-              event.stopPropagation(); // 防止关闭主菜单
-              langDropdownMobile.style.display = langDropdownMobile.style.display === 'block' ? 'none' : 'block';
-            });
-          }
-          
-          // 桌面端语言选择器功能
-          const langButtonDesktop = document.getElementById('language-button-desktop');
-          const langDropdownDesktop = document.getElementById('language-dropdown-desktop');
-          
-          if (langButtonDesktop && langDropdownDesktop) {
-            langButtonDesktop.addEventListener('click', function(event) {
-              event.stopPropagation();
-              langDropdownDesktop.style.display = langDropdownDesktop.style.display === 'block' ? 'none' : 'block';
-            });
-          }
-          
-          // 点击页面其他地方关闭语言下拉菜单
-          document.addEventListener('click', function(event) {
-            if (langDropdownMobile && 
-                !langButtonMobile.contains(event.target) && 
-                !langDropdownMobile.contains(event.target)) {
-              langDropdownMobile.style.display = 'none';
-            }
-            
-            if (langDropdownDesktop && 
-                !langButtonDesktop.contains(event.target) && 
-                !langDropdownDesktop.contains(event.target)) {
-              langDropdownDesktop.style.display = 'none';
-            }
-          });
-        });
-      </script>
     </nav>
   `;
   
-  // 保留window.updateCurrentLanguage函数以保持向后兼容性
-  // 但让它调用window.updateMainJsLanguage函数
+  // 保留window.updateCurrentLanguage函数以保持向后兼容�?  // 但让它调用window.updateMainJsLanguage函数
   window.updateCurrentLanguage = function(lang) {
     if (window.updateMainJsLanguage) {
       window.updateMainJsLanguage(lang);
@@ -2043,32 +1678,18 @@ document.addEventListener('DOMContentLoaded', () => {
   function initLanguageSwitcher() {
     // 确保在DOM中能找到元素
     setTimeout(() => {
-      // 获取桌面版和移动端的语言切换元素
-      const languageButtonDesktop = document.getElementById('language-button-desktop');
-      const languageDropdownDesktop = document.getElementById('language-dropdown-desktop');
-      const languageButtonMobile = document.getElementById('language-button-mobile');
-      const languageDropdownMobile = document.getElementById('language-dropdown-mobile');
+      const languageButton = document.getElementById('language-button');
+      const languageDropdown = document.getElementById('language-dropdown');
       const languageOptions = document.querySelectorAll('.language-option');
       
-      // 检查是否有语言选项
-      if (languageOptions.length === 0) {
-        console.log('Language options not found');
-        return;
-      }
-      
-      // 确保至少有一种版本的语言切换器存在
-      if (!languageButtonDesktop && !languageButtonMobile) {
-        console.log('No language switcher buttons found');
+      // 检查元素是否存�?      if (!languageButton || !languageDropdown || languageOptions.length === 0) {
+        console.log('Language switcher elements not found');
         return;
       }
       
       console.log('Language switcher elements found, initializing...');
       
-      // 获取当前首选语言
-      let preferredLang = localStorage.getItem('preferredLanguage') || 'en';
-      
-      // 定义各语言的翻译内容
-      const translations = {
+      // 定义各语言的翻译内�?      const translations = {
         en: {
           nav: {
             home: 'Home',
@@ -2184,27 +1805,27 @@ document.addEventListener('DOMContentLoaded', () => {
           },
           hero: {
             title: '寻找您的梦想',
-            subtitle: '迪拜和阿联酋优质房地产平台'
+            subtitle: '迪拜和阿联酋优质房地产平�?
           },
           footer: {
           followUs: '关注我们',
           facebook: '脸书',
           twitter: '推特',
-          instagram: '照片墙',
+          instagram: '照片�?,
           linkedin: '领英',
           privacyPolicy: '隐私政策',
           termsOfService: '服务条款',
           cookiePolicy: 'Cookie政策'
         },
         companyIntro: {
-          title: '寻找您开发机会的新方式',
-          description: '发现您的下一个开发项目，我们列出了10多个机会和专业服务。',
+          title: '寻找您开发机会的新方�?,
+          description: '发现您的下一个开发项目，我们列出�?0多个机会和专业服务�?,
           agents: '代理',
           listings: '房源',
           countries: '国家'
         },
         properties: {
-          sectionTitle: '探索我们的房产',
+          sectionTitle: '探索我们的房�?,
           sectionSubtitle: '发现各种优质房产',
           viewAllButton: '查看特色房产',
           apartment: '公寓',
@@ -2216,10 +1837,10 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         contact: {
           title: '联系我们',
-          description: '有问题吗？联系我们的团队获取帮助。'
+          description: '有问题吗？联系我们的团队获取帮助�?
         },
         footer: {
-          quickLinks: '快速链接',
+          quickLinks: '快速链�?,
           services: '服务',
           contactUs: '联系我们',
           followUs: '关注我们',
@@ -2243,27 +1864,27 @@ document.addEventListener('DOMContentLoaded', () => {
           callTitle: '致电我们',
           chatTitle: '与AI助手聊天',
           copyButton: '复制',
-          copiedText: '已复制',
+          copiedText: '已复�?,
           callNow: '立即拨打',
           phonePlaceholder: '电话号码',
           chatPlaceholder: '在此输入您的消息...',
-          welcomeMessage: '您好！我是您的房地产助手。今天我能为您提供什么帮助？您可以询问房产、服务或联系信息。'
+          welcomeMessage: '您好！我是您的房地产助手。今天我能为您提供什么帮助？您可以询问房产、服务或联系信息�?
         },
         stats: {
-          missionTitle: '我们的使命是重新定义有利于客户的房地产服务。',
-          missionSubtitle: '专业房地产服务',
+          missionTitle: '我们的使命是重新定义有利于客户的房地产服务�?,
+          missionSubtitle: '专业房地产服�?,
           stat1Title: '联系专家顾问',
-          stat1Desc: '专家房地产协助',
-          stat1Text: '访问我们由400多名专家代理组成的团队，随时为您提供帮助。我们经验丰富的房地产专家团队可为您的所有房产需求提供个性化协助，从咨询到完成交易。',
+          stat1Desc: '专家房地产协�?,
+          stat1Text: '访问我们�?00多名专家代理组成的团队，随时为您提供帮助。我们经验丰富的房地产专家团队可为您的所有房产需求提供个性化协助，从咨询到完成交易�?,
           stat2Title: '列出您的房产',
           stat2Desc: '专业营销解决方案',
-          stat2Text: '通过我们的专业营销策略列出您的房产，实现最优价值。通过我们全面的营销方法，包括专业摄影、虚拟游览和有针对性的广告活动，最大化您房产的曝光率。',
+          stat2Text: '通过我们的专业营销策略列出您的房产，实现最优价值。通过我们全面的营销方法，包括专业摄影、虚拟游览和有针对性的广告活动，最大化您房产的曝光率�?,
           stat3Title: '下载报告',
           stat3Desc: '市场洞察助您明智决策',
-          stat3Text: '下载最新的2025年第一季度综合迪拜房地产市场报告。通过我们详细的季度报告获取有价值的市场趋势、房产价值和投资机会洞察，涵盖整个迪拜房地产景观。',
+          stat3Text: '下载最新的2025年第一季度综合迪拜房地产市场报告。通过我们详细的季度报告获取有价值的市场趋势、房产价值和投资机会洞察，涵盖整个迪拜房地产景观�?,
           stat4Title: '探索迪拜项目',
           stat4Desc: '发现您的梦想房产',
-          stat4Text: '从我们广泛的迪拜项目组合中浏览并找到您理想的房产。在迪拜最受欢迎的位置发现各种住宅和商业房产，每个项目都有详细的信息和规格。'
+          stat4Text: '从我们广泛的迪拜项目组合中浏览并找到您理想的房产。在迪拜最受欢迎的位置发现各种住宅和商业房产，每个项目都有详细的信息和规格�?
         },
         property: {
           developer: '开发商',
@@ -2271,12 +1892,12 @@ document.addEventListener('DOMContentLoaded', () => {
           handoverDate: '交付日期'
         },
         form: {
-          fillAllFields: '请填写所有字段',
+          fillAllFields: '请填写所有字�?,
           validEmail: '请输入有效的电子邮件地址',
           sending: '发送中...',
-          sendMessage: '发送消息',
+          sendMessage: '发送消�?,
           successMessage: '您的消息已成功发送至 Info@hawsonhouse.com',
-          errorMessage: '发送消息时出错。请稍后再试。'
+          errorMessage: '发送消息时出错。请稍后再试�?
         }
         },
         ar: {
@@ -2365,7 +1986,7 @@ document.addEventListener('DOMContentLoaded', () => {
           stat2Text: 'حقق قيمة مثلى عن طريق تسجيل عقارك باستخدام استراتيجياتنا التسويقية المتخصصة. عزز تعرض عقارك بمنهجتنا التسويقية الشاملة، بما في ذلك التصوير المحترف والجولات الافتراضية والحملات الإعلانية المستهدفة.',
           stat3Title: 'تحميل التقرير',
           stat3Desc: 'رؤى سوق للمقررات التفكيرية المبنية على المعرفة',
-          stat3Text: 'تحميل أحدث تقرير粽 comprehensive سوق العقارات في دبي الربع الأول لعام 2025. احصل على رؤى قيمة عن اتجاهات السوق وقيم العقارات وفرص الاستثمار مع تقريرنا التفصيلي الربعي الذي يغطي كافة جوانب سوق العقارات في دبي.',
+          stat3Text: 'تحميل أحدث تقرير�?comprehensive سوق العقارات في دبي الربع الأول لعام 2025. احصل على رؤى قيمة عن اتجاهات السوق وقيم العقارات وفرص الاستثمار مع تقريرنا التفصيلي الربعي الذي يغطي كافة جوانب سوق العقارات في دبي.',
           stat4Title: 'استكشف مشاريع دبي',
           stat4Desc: 'اكتشف عقار أحلامك',
           stat4Text: 'تصفح وابحث عن عقارك المثالي من مجموعة واسعة من مشاريع دبي. اكتشف مجموعة واسعة من العقارات السكنية والتجارية عبر أهم المواقع المرجوة في دبي، مع معلومات تفصيلية ومواصفات لكل مشروع.'
@@ -2386,66 +2007,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       };
       
-      // 设置初始按钮文本
-      function updateButtonText(button, lang) {
-        if (button) {
-          const option = document.querySelector(`.language-option[data-lang="${lang}"]`);
-          if (option) {
-            button.textContent = option.textContent + ' ▼';
-          }
-        }
-      }
+      // 切换语言下拉菜单显示/隐藏
+      languageButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        console.log('Language button clicked, toggling dropdown');
+        languageDropdown.style.display = languageDropdown.style.display === 'block' ? 'none' : 'block';
+      });
       
-      // 更新所有按钮的初始文本
-      updateButtonText(languageButtonDesktop, preferredLang);
-      updateButtonText(languageButtonMobile, preferredLang);
-      
-      // 为桌面版语言切换器添加事件监听
-      if (languageButtonDesktop && languageDropdownDesktop) {
-        languageButtonDesktop.addEventListener('click', (e) => {
-          e.stopPropagation();
-          console.log('Desktop language button clicked, toggling dropdown');
-          languageDropdownDesktop.style.display = languageDropdownDesktop.style.display === 'block' ? 'none' : 'block';
-          // 关闭移动端下拉菜单（如果打开）
-          if (languageDropdownMobile) {
-            languageDropdownMobile.style.display = 'none';
-          }
-        });
-        
-        languageDropdownDesktop.addEventListener('click', (e) => {
-          e.stopPropagation();
-        });
-      }
-      
-      // 为移动端语言切换器添加事件监听
-      if (languageButtonMobile && languageDropdownMobile) {
-        languageButtonMobile.addEventListener('click', (e) => {
-          e.stopPropagation();
-          console.log('Mobile language button clicked, toggling dropdown');
-          languageDropdownMobile.style.display = languageDropdownMobile.style.display === 'block' ? 'none' : 'block';
-          // 关闭桌面版下拉菜单（如果打开）
-          if (languageDropdownDesktop) {
-            languageDropdownDesktop.style.display = 'none';
-          }
-        });
-        
-        languageDropdownMobile.addEventListener('click', (e) => {
-          e.stopPropagation();
-        });
-      }
-      
-      // 点击其他区域关闭所有下拉菜单
+      // 点击其他区域关闭下拉菜单
       document.addEventListener('click', () => {
-        if (languageDropdownDesktop && languageDropdownDesktop.style.display === 'block') {
-          languageDropdownDesktop.style.display = 'none';
-        }
-        if (languageDropdownMobile && languageDropdownMobile.style.display === 'block') {
-          languageDropdownMobile.style.display = 'none';
+        if (languageDropdown.style.display === 'block') {
+          languageDropdown.style.display = 'none';
         }
       });
       
-      // 添加语言选项的悬停效果
-      languageOptions.forEach(option => {
+      // 防止点击下拉菜单内部时关闭菜�?      languageDropdown.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+      
+      // 添加语言选项的悬停效�?      languageOptions.forEach(option => {
         option.addEventListener('mouseenter', () => {
           option.style.backgroundColor = 'rgba(0,0,0,0.05)';
         });
@@ -2460,17 +2040,11 @@ document.addEventListener('DOMContentLoaded', () => {
           const lang = option.getAttribute('data-lang');
           console.log(`Language option clicked: ${lang}`);
           
-          // 更新所有按钮显示的语言
-          updateButtonText(languageButtonDesktop, lang);
-          updateButtonText(languageButtonMobile, lang);
+          // 更新按钮显示的语言
+          languageButton.textContent = option.textContent + ' �?;
           
-          // 关闭所有下拉菜单
-          if (languageDropdownDesktop) {
-            languageDropdownDesktop.style.display = 'none';
-          }
-          if (languageDropdownMobile) {
-            languageDropdownMobile.style.display = 'none';
-          }
+          // 关闭下拉菜单
+          languageDropdown.style.display = 'none';
           
           // 保存语言偏好到localStorage
           localStorage.setItem('preferredLanguage', lang);
@@ -2495,18 +2069,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // 确保currentLang是最新的
         currentLang = lang;
         
-        // 调用全局的updateTranslatedElements函数，确保所有带有data-translate属性的元素都得到正确更新
-        if (window.updateTranslatedElements) {
+        // 调用全局的updateTranslatedElements函数，确保所有带有data-translate属性的元素都得到正确更�?        if (window.updateTranslatedElements) {
           console.log('Calling updateTranslatedElements function');
           window.updateTranslatedElements();
         }
         
-        // 然后处理需要特殊处理的元素（保持原有逻辑）
-        const translationsObj = translations[lang];
+        // 然后处理需要特殊处理的元素（保持原有逻辑�?        const translationsObj = translations[lang];
         
         if (translationsObj) {
-          // 更新导航栏文本
-          const navLinks = document.querySelectorAll('.nav-links a');
+          // 更新导航栏文�?          const navLinks = document.querySelectorAll('.nav-links a');
           if (navLinks.length >= 5) {
             navLinks[0].textContent = translationsObj.nav.home;
             navLinks[1].textContent = translationsObj.nav.buy;
@@ -2546,8 +2117,7 @@ document.addEventListener('DOMContentLoaded', () => {
             statsSubheader.textContent = translationsObj.stats.missionSubtitle;
           }
           if (statCards.length >= 4) {
-            // 第一个统计卡片
-            const stat1Title = statCards[0].querySelector('.stat-value');
+            // 第一个统计卡�?            const stat1Title = statCards[0].querySelector('.stat-value');
             const stat1Desc = statCards[0].querySelector('.stat-title');
             const stat1Text = statCards[0].querySelector('p');
             if (stat1Title && stat1Desc && stat1Text) {
@@ -2556,8 +2126,7 @@ document.addEventListener('DOMContentLoaded', () => {
               stat1Text.textContent = translationsObj.stats.stat1Text;
             }
             
-            // 第二个统计卡片
-            const stat2Title = statCards[1].querySelector('.stat-value');
+            // 第二个统计卡�?            const stat2Title = statCards[1].querySelector('.stat-value');
             const stat2Desc = statCards[1].querySelector('.stat-title');
             const stat2Text = statCards[1].querySelector('p');
             if (stat2Title && stat2Desc && stat2Text) {
@@ -2566,8 +2135,7 @@ document.addEventListener('DOMContentLoaded', () => {
               stat2Text.textContent = translationsObj.stats.stat2Text;
             }
             
-            // 第三个统计卡片
-            const stat3Title = statCards[2].querySelector('.stat-value');
+            // 第三个统计卡�?            const stat3Title = statCards[2].querySelector('.stat-value');
             const stat3Desc = statCards[2].querySelector('.stat-title');
             const stat3Text = statCards[2].querySelector('p');
             if (stat3Title && stat3Desc && stat3Text) {
@@ -2576,8 +2144,7 @@ document.addEventListener('DOMContentLoaded', () => {
               stat3Text.textContent = translationsObj.stats.stat3Text;
             }
             
-            // 第四个统计卡片
-            const stat4Title = statCards[3].querySelector('.stat-value');
+            // 第四个统计卡�?            const stat4Title = statCards[3].querySelector('.stat-value');
             const stat4Desc = statCards[3].querySelector('.stat-title');
             const stat4Text = statCards[3].querySelector('p');
             if (stat4Title && stat4Desc && stat4Text) {
@@ -2587,8 +2154,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           }
           
-          // 更新房产卡片中的静态文本
-          const metaItems = document.querySelectorAll('.property-meta .meta-item');
+          // 更新房产卡片中的静态文�?          const metaItems = document.querySelectorAll('.property-meta .meta-item');
           metaItems.forEach(item => {
             // 处理带有data-translate属性的span元素
             const translateSpan = item.querySelector('[data-translate]');
@@ -2622,8 +2188,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitButton = contactForm.querySelector('button[type="submit"]');
             
             if (nameInput && emailInput && messageInput && submitButton) {
-              // 更新表单占位符文本
-              nameInput.placeholder = lang === 'en' ? 'Your Name' : (lang === 'zh' ? '您的姓名' : 'اسمك');
+              // 更新表单占位符文�?              nameInput.placeholder = lang === 'en' ? 'Your Name' : (lang === 'zh' ? '您的姓名' : 'اسمك');
               emailInput.placeholder = lang === 'en' ? 'Your Email' : (lang === 'zh' ? '您的邮箱' : 'بريدك الإلكتروني');
               messageInput.placeholder = lang === 'en' ? 'Your Message' : (lang === 'zh' ? '您的留言' : 'رسالتك');
               submitButton.textContent = translationsObj.form.sendMessage;
@@ -2644,15 +2209,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           }
           
-          // 更新房产卡片中的类型和状态文本
-          const propertyTypes = document.querySelectorAll('.property-type');
+          // 更新房产卡片中的类型和状态文�?          const propertyTypes = document.querySelectorAll('.property-type');
           const propertyStatuses = document.querySelectorAll('.property-status');
           
           // 更新房产类型
           propertyTypes.forEach(typeElement => {
             const typeText = typeElement.textContent.trim();
-            // 中文类型到英文key的映射
-            const chineseToKeyMap = {
+            // 中文类型到英文key的映�?            const chineseToKeyMap = {
               '公寓': 'apartment',
               '别墅': 'villa',
               '联排别墅': 'townhouse',
@@ -2660,8 +2223,7 @@ document.addEventListener('DOMContentLoaded', () => {
               '复式公寓': 'duplex'
             };
             
-            // 阿拉伯语类型到英文key的映射
-            const arabicToKeyMap = {
+            // 阿拉伯语类型到英文key的映�?            const arabicToKeyMap = {
               'شقة': 'apartment',
               'فيلا': 'villa',
               'منزل نصفي': 'townhouse',
@@ -2673,16 +2235,13 @@ document.addEventListener('DOMContentLoaded', () => {
               // 处理复合类型
               const types = typeText.split('|').map(t => t.trim());
               const translatedTypes = types.map(t => {
-                // 先尝试中文映射
-                if (chineseToKeyMap[t]) {
+                // 先尝试中文映�?                if (chineseToKeyMap[t]) {
                   return translationsObj.properties[chineseToKeyMap[t]];
                 }
-                // 再尝试阿拉伯语映射
-                if (arabicToKeyMap[t]) {
+                // 再尝试阿拉伯语映�?                if (arabicToKeyMap[t]) {
                   return translationsObj.properties[arabicToKeyMap[t]];
                 }
-                // 再尝试直接匹配
-                if (translationsObj.properties[t.toLowerCase()]) {
+                // 再尝试直接匹�?                if (translationsObj.properties[t.toLowerCase()]) {
                   return translationsObj.properties[t.toLowerCase()];
                 } else if (t.includes('Apartment')) {
                   return translationsObj.properties.apartment;
@@ -2700,12 +2259,10 @@ document.addEventListener('DOMContentLoaded', () => {
               typeElement.textContent = translatedTypes.join(' | ');
             } else {
               // 处理单一类型
-              // 先尝试中文映射
-              if (chineseToKeyMap[typeText]) {
+              // 先尝试中文映�?              if (chineseToKeyMap[typeText]) {
                 typeElement.textContent = translationsObj.properties[chineseToKeyMap[typeText]];
               } else if (arabicToKeyMap[typeText]) {
-                // 再尝试阿拉伯语映射
-                typeElement.textContent = translationsObj.properties[arabicToKeyMap[typeText]];
+                // 再尝试阿拉伯语映�?                typeElement.textContent = translationsObj.properties[arabicToKeyMap[typeText]];
               } else if (translationsObj.properties[typeText.toLowerCase()]) {
                 typeElement.textContent = translationsObj.properties[typeText.toLowerCase()];
               } else if (typeText.includes('Apartment')) {
@@ -2722,8 +2279,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           });
           
-          // 更新房产状态
-          propertyStatuses.forEach(statusElement => {
+          // 更新房产状�?          propertyStatuses.forEach(statusElement => {
             const statusText = statusElement.textContent.trim();
             // 从英文翻译到其他语言
             if (statusText === 'Residential for Sale') {
@@ -2794,8 +2350,7 @@ document.addEventListener('DOMContentLoaded', () => {
               }
             });
             
-            // 更新社交媒体链接文本并添加点击事件处理
-            const socialLinks = footer.querySelectorAll('.social-links a, .footer-social .social-link');
+            // 更新社交媒体链接文本并添加点击事件处�?            const socialLinks = footer.querySelectorAll('.social-links a, .footer-social .social-link');
             socialLinks.forEach(link => {
               const linkText = link.textContent.trim();
               if (linkText === 'Facebook' || linkText === '脸书' || linkText === 'فيسبوك') {
@@ -2874,8 +2429,7 @@ document.addEventListener('DOMContentLoaded', () => {
               chatInput.placeholder = translationsObj.popup.chatPlaceholder;
             }
             
-            // 如果弹窗当前显示，更新标题
-            if (popupTitle && popupContainer.style.display !== 'none') {
+            // 如果弹窗当前显示，更新标�?            if (popupTitle && popupContainer.style.display !== 'none') {
               if (phoneContent && phoneContent.style.display === 'block') {
                 popupTitle.textContent = translationsObj.popup.callTitle;
               } else if (chatContent && chatContent.style.display === 'block') {
@@ -2888,8 +2442,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // 暴露更新页面语言函数到全局，供featured-properties.html页面使用
       window.updatePageLanguage = updatePageLanguage;
-    }, 100); // 短暂延迟确保DOM元素已创建
-  }
+    }, 100); // 短暂延迟确保DOM元素已创�?  }
   
   // 确保在导航栏创建后初始化语言切换功能
   initLanguageSwitcher();
@@ -2928,8 +2481,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // 显示文字函数
   function showHeroContent() {
-    // 先清除可能存在的定时器
-    if (fadeOutTimeout) clearTimeout(fadeOutTimeout);
+    // 先清除可能存在的定时�?    if (fadeOutTimeout) clearTimeout(fadeOutTimeout);
     
     // 显示文字
     heroContent.style.opacity = '1';
@@ -2942,20 +2494,18 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // 视频错误处理
   heroVideo.addEventListener('error', function() {
-    console.log('视频加载失败，显示背景图片');
+    console.log('视频加载失败，显示背景图�?);
     // 可以添加备用背景图片显示逻辑
   });
   
   // 初始显示文字内容
   setTimeout(showHeroContent, 500); // 页面加载后立即显示文字内容（半秒后）
   
-  // 监听视频播放事件，确保在视频循环时重新显示文字
-  heroVideo.addEventListener('timeupdate', () => {
+  // 监听视频播放事件，确保在视频循环时重新显示文�?  heroVideo.addEventListener('timeupdate', () => {
     // 当视频接近开始（1秒内）并且文字当前是隐藏状态时，重新触发显示逻辑
     if (heroVideo.currentTime < 1 && heroContent.style.opacity === '0') {
       if (fadeInTimeout) clearTimeout(fadeInTimeout);
-      fadeInTimeout = setTimeout(showHeroContent, 5000); // 视频重新开始后5秒再次显示
-    }
+      fadeInTimeout = setTimeout(showHeroContent, 5000); // 视频重新开始后5秒再次显�?    }
   });
   
   // 清理函数
@@ -3265,14 +2815,12 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   `;
   
-  // 创建公司使命区域（已清空内容）
-  const aboutSection = document.createElement('section');
+  // 创建公司使命区域（已清空内容�?  const aboutSection = document.createElement('section');
   aboutSection.id = 'about';
   aboutSection.className = 'about';
   aboutSection.innerHTML = '';
   
-  // 翻译功能已在文件顶部初始化
-  // 更新main.js语言的函数，供index.html调用
+  // 翻译功能已在文件顶部初始�?  // 更新main.js语言的函数，供index.html调用
   window.updateMainJsLanguage = function(lang) {
     currentLang = lang;
     updateTranslatedElements();
@@ -3406,7 +2954,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <input type="email" placeholder="Your Email" data-translate-placeholder="formEmailPlaceholder" required />
         </div>
         
-        <!-- 消息文本框 -->
+        <!-- 消息文本�?-->
         <textarea placeholder="Your Message" data-translate-placeholder="formMessagePlaceholder" required></textarea>
         
         <!-- 提交按钮 -->
@@ -3491,19 +3039,19 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="footer-social">
         <h4 data-translate="footerFollowUs">Follow Us</h4>
         <div class="social-links">
-          <!-- Facebook 线性图标 -->
+          <!-- Facebook 线性图�?-->
           <a href="#" class="social-link" aria-label="Facebook">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
             </svg>
           </a>
-          <!-- Twitter 线性图标 -->
+          <!-- Twitter 线性图�?-->
           <a href="#" class="social-link" aria-label="Twitter">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
             </svg>
           </a>
-          <!-- Instagram 线性图标 -->
+          <!-- Instagram 线性图�?-->
           <a href="#" class="social-link" aria-label="Instagram">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -3511,7 +3059,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
             </svg>
           </a>
-          <!-- LinkedIn 线性图标 -->
+          <!-- LinkedIn 线性图�?-->
           <a href="#" class="social-link" aria-label="LinkedIn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -3699,7 +3247,7 @@ document.addEventListener('DOMContentLoaded', () => {
   companyIntroSection.className = 'company-intro';
   companyIntroSection.innerHTML = `
     <div class="company-intro-content">
-      <!-- 左侧16:9轮播图容器 -->
+      <!-- 左侧16:9轮播图容�?-->
       <div class="company-intro-carousel-container">
         <div class="company-intro-carousel">
           <div class="carousel-slide" style="opacity: 1; z-index: 2;">
@@ -3741,12 +3289,9 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   `;
 
-  // 检查是否为独立页面（如featured-properties.html）
-  // 如果是主页（包含完整的app结构），则添加所有组件
-  // 否则，只确保翻译功能正常工作
+  // 检查是否为独立页面（如featured-properties.html�?  // 如果是主页（包含完整的app结构），则添加所有组�?  // 否则，只确保翻译功能正常工作
   if (!isStandalonePage) {
-    // 将所有部分添加到应用中
-    app.appendChild(header);
+    // 将所有部分添加到应用�?    app.appendChild(header);
     app.appendChild(heroSection);
     app.appendChild(companyIntroSection);
     app.appendChild(propertiesSection);
@@ -3758,8 +3303,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   // 所有元素已添加到DOM或已确认是独立页面，现在更新翻译
-  // 对于独立页面，直接执行翻译更新
-  updateTranslatedElements();
+  // 对于独立页面，直接执行翻译更�?  updateTranslatedElements();
   
   // 为首页新闻卡片的Read more按钮添加弹窗功能
   // 首先检查是否在首页
@@ -4006,7 +3550,7 @@ document.addEventListener('DOMContentLoaded', () => {
           font-size: 1.3rem;
         }
       }
-    `;
+    ';
     document.head.appendChild(modalStyle);
     
     // 获取弹窗元素
@@ -4039,8 +3583,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentLang = localStorage.getItem('preferredLanguage') || currentLang || 'en';
         const t = globalTranslations[currentLang] || globalTranslations.en;
         
-        // 根据标题确定是哪个新闻
-        let newsId = '';
+        // 根据标题确定是哪个新�?        let newsId = '';
         
         if (title.includes('Lyvia By Palace')) {
           newsId = 'lyvia';
@@ -4063,8 +3606,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modalTitle.textContent = title;
         modalTitleOverlay.textContent = title;
         
-        // 根据新闻ID和当前语言显示对应的内容
-        if (newsId === 'lyvia') {
+        // 根据新闻ID和当前语言显示对应的内�?        if (newsId === 'lyvia') {
           modalContent.innerHTML = t.lyviaModalContent || '';
         } else if (newsId === 'solaya') {
           modalContent.innerHTML = t.solayaModalContent || '';
@@ -4100,8 +3642,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     
-    // ESC键关闭弹窗
-    document.addEventListener('keydown', function(e) {
+    // ESC键关闭弹�?    document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && window.newsModal.classList.contains('active')) {
         window.newsModal.classList.remove('active');
         document.body.style.overflow = '';
@@ -4137,13 +3678,11 @@ document.addEventListener('DOMContentLoaded', () => {
            slide.style.zIndex = '1';
          });
          
-         // 移除所有指示器的激活状态
-         indicators.forEach(indicator => {
+         // 移除所有指示器的激活状�?         indicators.forEach(indicator => {
            indicator.classList.remove('active');
          });
          
-         // 显示指定幻灯片
-         slides[index].style.opacity = '1';
+         // 显示指定幻灯�?         slides[index].style.opacity = '1';
          slides[index].style.zIndex = '2';
          
          // 激活指定指示器
@@ -4161,8 +3700,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const nextIndex = (currentIndex + 1) % slides.length;
           showSlide(nextIndex);
         });
-      }, 6000); // 进一步延长轮播间隔，降低性能消耗
-    }
+      }, 6000); // 进一步延长轮播间隔，降低性能消�?    }
     
     // 停止自动轮播
     function stopCarousel() {
@@ -4180,16 +3718,14 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
     
-    // 鼠标悬停时停止轮播，离开时继续
-    carouselContainer.addEventListener('mouseenter', stopCarousel);
+    // 鼠标悬停时停止轮播，离开时继�?    carouselContainer.addEventListener('mouseenter', stopCarousel);
     carouselContainer.addEventListener('mouseleave', startCarousel);
     
     // 启动轮播
     startCarousel();
   }
   
-  // 初始化房产卡片轮播
-  function initPropertyCarousels() {
+  // 初始化房产卡片轮�?  function initPropertyCarousels() {
     // 简化版本，确保语法正确
     const propertyCarousels = document.querySelectorAll('.property-carousel');
     
@@ -4200,8 +3736,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentIndex = 0;
         let intervalId;
       
-      // 设置第一张幻灯片为可见
-      if (slides.length > 0) {
+      // 设置第一张幻灯片为可�?      if (slides.length > 0) {
         slides.forEach(slide => {
           slide.style.opacity = '0';
           slide.style.zIndex = '1';
@@ -4209,8 +3744,7 @@ document.addEventListener('DOMContentLoaded', () => {
         slides[currentIndex].style.opacity = '1';
         slides[currentIndex].style.zIndex = '2';
         
-        // 设置第一张指示器为激活状态
-        if (indicators.length > 0) {
+        // 设置第一张指示器为激活状�?        if (indicators.length > 0) {
           indicators[currentIndex].classList.add('active');
         }
       }
@@ -4226,13 +3760,11 @@ document.addEventListener('DOMContentLoaded', () => {
           slide.style.zIndex = '1';
         });
         
-        // 移除所有指示器的激活状态
-        indicators.forEach(indicator => {
+        // 移除所有指示器的激活状�?        indicators.forEach(indicator => {
           indicator.classList.remove('active');
         });
         
-        // 显示指定幻灯片
-        slides[index].style.opacity = '1';
+        // 显示指定幻灯�?        slides[index].style.opacity = '1';
         slides[index].style.zIndex = '2';
         
         // 激活指定指示器
@@ -4249,8 +3781,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const nextIndex = (currentIndex + 1) % slides.length;
             showSlide(nextIndex);
           });
-        }, 5000); // 延长轮播间隔，降低性能消耗
-      }
+        }, 5000); // 延长轮播间隔，降低性能消�?      }
       
       // 停止自动轮播
       function stopCarousel() {
@@ -4268,8 +3799,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
       
-      // 鼠标悬停时停止轮播，离开时继续
-      carousel.addEventListener('mouseenter', stopCarousel);
+      // 鼠标悬停时停止轮播，离开时继�?      carousel.addEventListener('mouseenter', stopCarousel);
       carousel.addEventListener('mouseleave', startCarousel);
       
       // 启动轮播
@@ -4280,20 +3810,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // 调用公司介绍轮播图初始化函数
   initCompanyIntroCarousel();
   
-  // 调用房产卡片轮播初始化函数
-  initPropertyCarousels();
+  // 调用房产卡片轮播初始化函�?  initPropertyCarousels();
   
-  // 实现爱心按钮点击变红和散色效果以及表单提交处理
-  document.addEventListener('DOMContentLoaded', () => {
-    // 处理联系表单提交 - 实现通过mailto链接发送邮件
-    const contactForm = document.querySelector('.contact-form');
+  // 实现爱心按钮点击变红和散色效果以及表单提交处�?  document.addEventListener('DOMContentLoaded', () => {
+    // 处理联系表单提交 - 实现通过mailto链接发送邮�?    const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
       // 为确保邮件能真实发送，我们将使用Formspree作为表单处理服务
       // 实际部署时，需要在Formspree注册并获取自己的endpoint
-      const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mknapbwy'; // 这是一个示例endpoint，需要替换为真实的
-      
-      // 也可以使用自定义的后端API（如果有）
-      // const API_ENDPOINT = 'https://your-backend-api.com/contact';
+      const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mknapbwy'; // 这是一个示例endpoint，需要替换为真实�?      
+      // 也可以使用自定义的后端API（如果有�?      // const API_ENDPOINT = 'https://your-backend-api.com/contact';
       
       contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -4303,8 +3828,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = contactForm.querySelector('input[type="email"]').value;
         const message = contactForm.querySelector('textarea').value;
         
-        // 获取当前语言的翻译
-        const translations = {
+        // 获取当前语言的翻�?        const translations = {
           en: {
             fillAllFields: 'Please fill in all fields',
             validEmail: 'Please enter a valid email address',
@@ -4313,11 +3837,11 @@ document.addEventListener('DOMContentLoaded', () => {
             sendingMessage: 'Sending message...'
           },
           zh: {
-            fillAllFields: '请填写所有字段',
+            fillAllFields: '请填写所有字�?,
             validEmail: '请输入有效的电子邮件地址',
-            successMessage: '您的留言已成功发送！我们将尽快与您联系。',
-            errorMessage: '发送留言时出错。请稍后再试。',
-            sendingMessage: '正在发送...'
+            successMessage: '您的留言已成功发送！我们将尽快与您联系�?,
+            errorMessage: '发送留言时出错。请稍后再试�?,
+            sendingMessage: '正在发�?..'
           },
           ar: {
             fillAllFields: 'يرجى ملء جميع الحقول',
@@ -4332,8 +3856,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const submitButton = contactForm.querySelector('button[type="submit"]');
         const originalButtonText = submitButton.textContent;
         
-        // 简单验证
-        if (!name || !email || !message) {
+        // 简单验�?        if (!name || !email || !message) {
           alert(t.fillAllFields);
           return;
         }
@@ -4346,8 +3869,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         try {
-          // 显示发送中状态
-          submitButton.disabled = true;
+          // 显示发送中状�?          submitButton.disabled = true;
           submitButton.textContent = t.sendingMessage;
           
           // 准备表单数据
@@ -4368,8 +3890,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const data = await response.json();
           
           if (response.ok && !data.error) {
-            // 发送成功
-            alert(t.successMessage);
+            // 发送成�?            alert(t.successMessage);
             
             // 重置表单
             contactForm.reset();
@@ -4381,14 +3902,13 @@ document.addEventListener('DOMContentLoaded', () => {
               recipient: 'info@hawsonhouse.com'
             });
           } else {
-            // 发送失败
-            throw new Error(data.error || 'Form submission failed');
+            // 发送失�?            throw new Error(data.error || 'Form submission failed');
           }
           
         } catch (error) {
           console.error('Error sending message:', error);
           
-          // 失败时提供备选方案 - 使用mailto
+          // 失败时提供备选方�?- 使用mailto
           try {
             if (confirm(`${t.errorMessage}\n\nWould you like to try sending via your email client instead?`)) {
               const recipient = 'info@hawsonhouse.com';
@@ -4404,25 +3924,20 @@ document.addEventListener('DOMContentLoaded', () => {
             alert(t.errorMessage);
           }
         } finally {
-          // 恢复按钮原始状态
-          submitButton.disabled = false;
+          // 恢复按钮原始状�?          submitButton.disabled = false;
           submitButton.textContent = originalButtonText;
         }
       });
     }
 
-    // 实现爱心按钮点击变红和散色效果
-    // 获取所有爱心按钮
-    const favoriteButtons = document.querySelectorAll('.favorite-btn');
+    // 实现爱心按钮点击变红和散色效�?    // 获取所有爱心按�?    const favoriteButtons = document.querySelectorAll('.favorite-btn');
     
-    // 为每个按钮添加点击事件
-    favoriteButtons.forEach(button => {
+    // 为每个按钮添加点击事�?    favoriteButtons.forEach(button => {
       button.addEventListener('click', (event) => {
         event.preventDefault();
         event.stopPropagation();
         
-        // 切换active类
-        const isActive = button.classList.toggle('active');
+        // 切换active�?        const isActive = button.classList.toggle('active');
         
         // 如果是点击后激活，创建散色效果
         if (isActive) {
@@ -4437,8 +3952,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const buttonX = buttonRect.left + buttonRect.width / 2;
       const buttonY = buttonRect.top + buttonRect.height / 2;
       
-      // 创建10个粒子
-      for (let i = 0; i < 10; i++) {
+      // 创建10个粒�?      for (let i = 0; i < 10; i++) {
         const particle = document.createElement('div');
         particle.classList.add('heart-particle');
         
@@ -4456,12 +3970,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // 添加到body
         document.body.appendChild(particle);
         
-        // 动画结束后移除粒子
-        setTimeout(() => {
+        // 动画结束后移除粒�?        setTimeout(() => {
           particle.remove();
         }, 1000);
       }
     }
   });
-
-});

@@ -1201,7 +1201,8 @@ a:hover {
   
   /* Hero section optimization */
   .hero {
-    padding: 6rem 1rem;
+    padding: 0 1rem 6rem;
+    margin-top: 0;
   }
   
   .hero h1 {

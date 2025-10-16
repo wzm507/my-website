@@ -21,6 +21,20 @@
             line-height: 1.6;
         }
         
+        /* 响应式logo文本 */
+        .mobile-text {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .desktop-text {
+                display: none !important;
+            }
+            .mobile-text {
+                display: inline !important;
+            }
+        }
+        
         /* 英雄区域样式 */
         .hero {
             position: relative;
@@ -205,7 +219,10 @@
 <body>
     <!-- 导航栏 -->
     <nav class="navbar">
-        <a href="#" class="logo">HAWSON HOUSE PROPERTIES</a>
+        <a href="#" class="logo">
+            <span class="desktop-text">HAWSON HOUSE PROPERTIES</span>
+            <span class="mobile-text">HOUSE</span>
+        </a>
         <div class="nav-links">
             <a href="#">Home</a>
             <a href="#">Buy</a>

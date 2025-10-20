@@ -170,6 +170,27 @@ a:hover {
 
 /* 响应式设计 - 移动端 */
 @media screen and (max-width: 768px) {
+  /* 移动设备字体优化 */
+  body {
+    font-size: 16px; /* 基础字体大小，确保可读性 */
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  p {
+    font-size: 0.95rem;
+  }
+  
   .navbar {
     padding: 1rem;
     flex-wrap: wrap;
@@ -270,6 +291,20 @@ a:hover {
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* 移动设备英雄区域字体优化 */
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
 .search-box {
   display: flex;
   gap: 1rem;
@@ -342,6 +377,60 @@ a:hover {
   font-size: 1rem;
   transition: var(--transition);
   white-space: nowrap;
+}
+
+/* 移动设备按钮文字优化 */
+@media screen and (max-width: 768px) {
+  .view-all-btn, .contact-btn, .mobile-contact-btn {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.2rem;
+  }
+  
+  .search-box input,
+  .search-box select {
+    font-size: 0.9rem;
+  }
+}
+
+/* 小屏幕手机设备字体优化 (360px及以下) */
+@media screen and (max-width: 360px) {
+  body {
+    font-size: 15px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 0.9rem;
+  }
+  
+  .logo {
+    font-size: 1.4rem;
+  }
+  
+  .view-all-btn, .contact-btn, .mobile-contact-btn {
+    font-size: 0.85rem;
+    padding: 0.7rem 1rem;
+  }
 }
 
 .view-all-btn:hover {

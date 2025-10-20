@@ -2929,9 +2929,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroSection = document.createElement('section');
   heroSection.className = 'hero';
   heroSection.innerHTML = `
-    <!-- 视频元素 -->
-    <video id="hero-video" class="hero-video" autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
-      <source src="/assets/EMAAR_SOUTH_CONSTRUCTION_UPDATE_JAN_2025.mp4" type="video/mp4">
+    <!-- 备用背景图 -->
+    <div class="hero-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images_new/image/1.png') center/cover no-repeat; z-index: -1;"></div>
+    
+    <!-- 视频元素 - 添加错误处理 -->
+    <video id="hero-video" class="hero-video" autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; display: none;">
+      <source src="/videos/2.mp4" type="video/mp4">
+      <source src="/public/videos/2.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div id="hero-content" class="hero-content" style="opacity: 0; transition: opacity 0.8s ease-in-out;">

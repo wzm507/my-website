@@ -241,6 +241,40 @@ a:hover {
   .search-box select {
     font-size: 0.9rem;
   }
+  
+  /* 隐藏桌面版联系按钮 */
+  .contact-btn {
+    display: none;
+  }
+  
+  /* 显示移动版联系按钮 */
+  .mobile-contact-btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+  
+  /* 导航菜单激活状态 */
+  .nav-links.active {
+    right: 0;
+  }
+  
+  /* 汉堡菜单按钮激活状态 - 变成X形状 */
+  .mobile-menu-btn.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .mobile-menu-btn.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  
+  .mobile-menu-btn.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
 }
 
 /* 小屏幕手机设备字体优化 (360px及以下) */
@@ -281,41 +315,6 @@ a:hover {
   .view-all-btn, .contact-btn, .mobile-contact-btn {
     font-size: 0.85rem;
     padding: 0.7rem 1rem;
-  }
-}
-  
-  /* 隐藏桌面版联系按钮 */
-  .contact-btn {
-    display: none;
-  }
-  
-  /* 显示移动版联系按钮 */
-  .mobile-contact-btn {
-    display: inline-block;
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 30px;
-    font-weight: 500;
-    margin-top: 1rem;
-  }
-  
-  /* 导航菜单激活状态 */
-  .nav-links.active {
-    right: 0;
-  }
-  
-  /* 汉堡菜单按钮激活状态 - 变成X形状 */
-  .mobile-menu-btn.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .mobile-menu-btn.active .bar:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-  }
-  
-  .mobile-menu-btn.active .bar:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
   }
 }
 
@@ -1662,6 +1661,32 @@ a:hover {
   .company-stats {
     flex-direction: column;
     gap: 1.5rem;
+  }
+}
+
+/* 响应式设计 - 平板端 */
+@media screen and (max-width: 1024px) {
+  .property-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 额外的响应式设计 - 小屏幕 */
+@media screen and (max-width: 768px) {
+  .property-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .property-card {
+    margin-bottom: 2rem;
+  }
+  
+  .search-box {
+    margin-top: 2rem;
   }
 }
 

@@ -2492,10 +2492,55 @@ export const globalTranslations = {
     }, 20000); // 20秒后淡出
   }
   
+  // 显示备用背景图片的函数
+  function showFallbackBackground() {
+    console.log('显示备用背景图片');
+    // 创建备用背景图片元素
+    const fallbackImage = document.createElement('div');
+    fallbackImage.style.position = 'absolute';
+    fallbackImage.style.top = '0';
+    fallbackImage.style.left = '0';
+    fallbackImage.style.width = '100%';
+    fallbackImage.style.height = '100%';
+    fallbackImage.style.backgroundImage = 'url(/assets/lunbotu/4c97ca9f-75a1-48b3-a48a-b1c609933793.webp)';
+    fallbackImage.style.backgroundSize = 'cover';
+    fallbackImage.style.backgroundPosition = 'center';
+    fallbackImage.style.zIndex = '-1';
+    fallbackImage.id = 'fallback-background';
+    
+    // 添加到hero区域
+    heroSection.insertBefore(fallbackImage, heroContent);
+    
+    // 隐藏视频元素
+    heroVideo.style.display = 'none';
+  }
+  
   // 视频错误处理
   heroVideo.addEventListener('error', function() {
-    console.log('视频加载失败，显示背景图�?);
-    // 可以添加备用背景图片显示逻辑
+    console.log('视频加载失败');
+    showFallbackBackground();
+  });
+  
+  // 视频加载超时处理
+  let loadTimeout;
+  function handleVideoLoadTimeout() {
+    console.log('视频加载超时');
+    // 如果视频还未开始播放，显示备用背景
+    if (heroVideo.readyState < 2) {
+      showFallbackBackground();
+    }
+  }
+  
+  // 设置10秒超时
+  loadTimeout = setTimeout(handleVideoLoadTimeout, 10000);
+  
+  // 视频成功加载后清除超时
+  heroVideo.addEventListener('loadeddata', function() {
+    console.log('视频成功加载');
+    if (loadTimeout) {
+      clearTimeout(loadTimeout);
+      loadTimeout = null;
+    }
   });
   
   // 初始显示文字内容
@@ -2512,6 +2557,7 @@ export const globalTranslations = {
   function cleanupTimers() {
     if (fadeInTimeout) clearTimeout(fadeInTimeout);
     if (fadeOutTimeout) clearTimeout(fadeOutTimeout);
+    if (loadTimeout) clearTimeout(loadTimeout);
   }
   
   // 页面卸载时清理定时器

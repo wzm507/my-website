@@ -2453,7 +2453,7 @@ export const globalTranslations = {
   heroSection.innerHTML = `
     <!-- 视频元素 -->
     <video id="hero-video" class="hero-video" autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
-      <source src="/assets/EMAAR_SOUTH_CONSTRUCTION_UPDATE_JAN_2025.mp4" type="video/mp4">
+      <source src="/assets/2.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div id="hero-content" class="hero-content" style="opacity: 0; transition: opacity 0.8s ease-in-out;">
